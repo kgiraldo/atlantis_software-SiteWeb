@@ -9,7 +9,7 @@
       <img src="../assets/icons/menu.svg" alt="Icon menu burger">
     </div>
     
-    <div class="nav-menu__content" id="sc_content_menu" *ngIf="showMenu" [ngClass]="{'slide_left': showMenu, 'slide_left_out' : !showMenu}">
+    <div class="nav-menu__content" id="sc_content_menu" *ngIf="showMenu" [ngClass]="{'slide_left': showMenu}">
       <img src="../assets/icons/close.svg" alt="Icon menu burger" class="nav-menu__list_icon" (click)="closeMenuMobile()">
       <ul class="nav-menu__list">
         <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of getMenuInfo().menuItems" [routerLink]="item.linked" class="nav-menu__list_item item__typeText">{{item.name}}</a></li>

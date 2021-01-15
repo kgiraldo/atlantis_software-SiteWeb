@@ -9,11 +9,10 @@ import { Component, HostListener} from '@angular/core';
 export class AppComponent {
   title = 'atlantis-web';
 
-  showMenu:boolean;
+  showMenu?:boolean;
 
 
   constructor(){
-    this.showMenu =true;
   }
 
   ngOnInit(): void {}
