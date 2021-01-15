@@ -1,0 +1,251 @@
+/*Color variables*/
+$c-white: #ffffff;
+$c-bone: #f5f5f5;
+$c-deepBlue: #0d304a;
+$c-blue: #133854;
+$c-orange: #fe5002;
+$c-gray: #535353;
+$c-lightGray: #c5c5c5;
+
+/*Gradient Variables*/
+$grandient-blue: linear-gradient(186deg, $c-blue 0%, rgba(16,61,94,1) 35%, rgba(14,52,81,1) 100%);
+
+/*fonts*/
+@font-face{
+    font-family: "Montserrat Extrabold";
+    src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype"),
+         url("assets/fonts/Montserrat-Light.otf") format("opentype"),
+         url("assets/fonts/Montserrat-Light.woff") format("woff"),
+         url("assets/fonts/Montserrat-Light.woff2") format("woff2"),
+         url("assets/fonts/Montserrat-ExtraBold.svg") format("svg"),
+         url("assets/fonts/Montserrat-ExtraBold.eot") format("embedded-opentype");
+}
+
+@font-face{
+    font-family: "Montserrat Light";
+    src: url("assets/fonts/Montserrat-Light.ttf") format("truetype"),
+         url("assets/fonts/Montserrat-Light.otf") format("opentype"),
+         url("assets/fonts/Montserrat-Light.woff") format("woff"),
+         url("assets/fonts/Montserrat-Light.woff2") format("woff2"),
+         url("assets/fonts/Montserrat-Light.svg") format("svg"),
+         url("assets/fonts/Montserrat-Light.eot") format("embedded-opentype");
+}
+
+@font-face{
+    font-family: "Montserrat Medium";
+    src: url("assets/fonts/Montserrat-Medium.ttf") format("truetype"),
+         url("assets/fonts/Montserrat-Medium.otf") format("opentype"),
+         url("assets/fonts/Montserrat-Medium.woff") format("woff"),
+         url("assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+         url("assets/fonts/Montserrat-Medium.svg") format("svg"),
+         url("assets/fonts/Montserrat-Medium.eot") format("embedded-opentype");
+}
+
+/*Global classes*/
+body{
+  overflow-x: hidden;
+}
+.margin-container{
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+.principal_title{
+  color: $c-blue;
+  font-size: 50px;
+  font-family: "Montserrat Extrabold", sans-serif;
+  line-height: 1;
+}
+
+.principal_title_sections{
+  color: $c-blue;
+  font-size: 50px;
+  font-family: "Montserrat Extrabold", sans-serif;
+  line-height: 1;
+}
+
+.subtitle{
+  color: $c-blue;
+  font-size: 35px;
+  font-family: "Montserrat Extrabold",sans-serif;
+}
+
+.description{
+  color: $c-gray;
+  font-family: "Montserrat Light",sans-serif;
+  font-size: 20px;
+}
+
+.description_change{
+  color: $c-gray;
+  font-family: "Montserrat Light",sans-serif;
+  font-size: 20px;
+}
+
+.mini-texts{
+  font-family: "Montserrat Light",sans-serif;
+  color: $c-lightGray;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.subscribe_input__content{
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  .subscribe_input{
+    width: 90%;
+    padding: 15px 35px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    background: $c-bone;
+    font-family: "Montserrat Light", sans-serif;
+    color: $c-blue;
+    font-size: 15px;
+    &::placeholder{
+      color: $c-lightGray;
+    }
+    &::-moz-placeholder{
+      color: $c-lightGray;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  .subscribe_input__submit{
+    background: $c-blue;
+    width: 10%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    &:hover{
+      transform: scale(1.02);
+    }
+  }
+}
+
+
+/*mixin Hover Animation*/
+@mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: $c-orange) {
+  @if $dir == null {
+    @if $type == fade {
+      $dir: 'top';
+    }
+  }
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  &::after {
+    position: absolute;
+    left: 25%;
+    content: '';
+    width: 50%;
+    height: $weight;
+    background: $color;
+    @if $type == fade {
+      transition: .3s;
+      opacity: 0;
+      visibility: hidden;
+      @if $dir == bottom {
+        bottom: $weight * -4;
+      } @else {
+        bottom: $weight;
+      }
+    } 
+  }
+  &:hover::after {
+    @if $type == fade {
+      bottom: $weight * -2;
+      opacity: 1;
+      visibility: visible;
+    } 
+  }
+}
+
+
+/*Responsives Classes*/
+@media only screen and (min-width: 375px) and (max-width: 800px) {
+  .margin-container{
+    margin-left: 36px;
+    margin-right: 36px;
+  }
+
+  .principal_title{
+    color: $c-white;
+    font-size: 30px;
+  }
+
+  .subtitle{
+    color: $c-white;
+    font-size: 25px;
+  }
+
+  .description{
+    color: $c-white;
+    font-size: 13px;
+  }
+
+  .description_change{
+    font-size: 13px;
+  }
+
+  .principal_title_sections{
+    font-size: 30px;
+  }
+
+  .mini-texts{
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1390px) {
+  .margin-container{
+    margin-left: 46px;
+    margin-right: 46px;
+  }
+
+  .principal_title{
+    font-size: 35px;
+  }
+
+  .subtitle{
+    font-size: 25px;
+  }
+
+  .description{
+    font-size: 13px;
+  }
+
+  .subscribe_input__content{
+    .subscribe_input{
+      width: 70%;
+    }
+  }
+}
+
+/*Animations*/
+.slide_left{
+  animation: slide-left 0.3s ease-in ;
+}
+
+.slide_left_out{
+  animation: slide-left-out 0.3s ease-in ;
+}
+
+@keyframes slide-left { 
+  from { right: -100%; opacity: 0;} 
+  to { right: 0;  opacity: 1;}  
+}
+
+@keyframes slide-left-out { 
+  from { right: 0%; } 
+  to { right: -100%;}  
+}

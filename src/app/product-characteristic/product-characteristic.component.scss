@@ -1,0 +1,42 @@
+@import '../../styles.scss';
+
+.card_product{
+  display: flex;
+  flex-direction: column;
+  background: $c-bone;
+  .card_image_item{
+    -webkit-box-shadow: 0px 28px 37px -4px rgba(0,0,0,0.11); 
+    box-shadow: 0px 28px 37px -4px rgba(0,0,0,0.11);
+    .imge_item{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.card_text_item{
+  padding: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .card_title{
+    font-family: "Montserrat Extrabold",sans-serif;
+    color: $c-blue;
+  }
+  .card_item_description{
+    font-family: "Montserrat Light",sans-serif;
+    font-size: 20px;
+    color: $c-gray;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 800px) {
+  .card_text_item{
+    padding: 30px;
+    .card_item_description{
+      font-size: 13px;
+    }
+  }
+}

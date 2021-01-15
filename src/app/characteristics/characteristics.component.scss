@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+
+.card_description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .image_description{
+    width: fit-content;
+    margin-bottom: 15px;
+    img{
+      max-width: 80%;
+    }
+  }
+
+  .desciption_name{
+    font-family: "Montserrat Extrabold", sans-serif;
+    font-size: 25px;
+    color: $c-blue;
+    margin-bottom: 20px;
+  }
+
+  .description{
+    font-family: "Montserrat Light";
+    font-size: 16px;
+    color: $c-gray;
+  }
+
+}
+
+/*Responsive Cards*/
+@media only screen and (min-width: 375px) and (max-width: 800px) {
+  .card_description{
+    margin-right: 0;
+    margin-bottom: 50px;
+    align-items: center;
+  }
+
+  .description{
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1390px) {
+  .description{
+    font-size: 14px;
+  }
+}

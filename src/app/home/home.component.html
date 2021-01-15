@@ -1,0 +1,128 @@
+<!--Banner-->
+<div class="content_banner">
+  <div class="containerHome margin-container">
+    <div class="content_banner__info">
+      <span class="important_text">{{getHeaderInfo().importantMessage}}</span>
+      <h1 class="principal_title">{{getHeaderInfo().title}}</h1>
+      <h2 class="subtitle">{{getHeaderInfo().subtitle}}</h2>
+      <p class="description">{{getHeaderInfo().description}}</p>
+      <div class="subscribe_input__content">
+        <input type="email" placeholder="exemple@mail.com" class="subscribe_input">
+        <a href="#" class="subscribe_input__submit"><img src="../../assets/icons/send.svg" alt="Send Icon"></a>
+      </div>
+    </div>
+
+    <div class="content_baner__image">
+      <div class="image_banner_container">
+        <img src="../../assets/img/ImmageBanner2.png" alt="People shaking hands">
+      </div>
+      <div class="square_blue"></div>
+      <div class="square_blue__big" ></div>
+      <div class="square_blue__small"></div>
+    </div>
+  </div>
+</div>
+
+<!--Entreprise Description-->
+<div class="content_entreprise">
+  <!--Section 1-->
+  <section class="society_description__content margin-container">
+    <div class="society_description__title">
+      <span class="mini-texts">{{getSocietyInfor().spanSectionEntreprise}}</span>
+      <h2 class="principal_title_sections">{{getSocietyInfor().titleSectionEntrprise}}</h2>
+    </div>
+
+    <div class="society_description">
+        <app-characteristics *ngFor="let charac of getSocietyInfor().characteristics" [characteristics]="charac" class="card_container_description"></app-characteristics>
+    </div>
+  </section>
+  
+  <!--Section 2-->
+  <section class="other_services__content margin-container">
+    <div class="other_services_title">
+      <div class="other_services_title__texts">
+        <span class="mini-texts">{{getServicesInfo().spanSectionServices}}</span>
+        <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getServicesInfo().titleSectionServices}}</h2>
+        <p class="description" [ngStyle]="{'color' : 'white'}">{{getServicesInfo().descriptionServicesText}}</p>
+        <a href="" class="cta_services">Contacter notre expert</a>
+      </div>
+      <div class="background_services"></div>
+    </div>
+
+    <div class="other_services">
+      <div class="service_card" *ngFor="let produit of getServicesInfo().otherServices">
+        <div class="square_service"></div>
+        <span class="name_service">{{produit.name}}</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--Produit Business Atlantis Description -->
+<div class="content_product">
+  <!--Section 3-->
+  <section class="content_product__info margin-container">
+    <div class="info_column">
+      <div class="info_title">
+        <span class="mini-texts">{{getProductInfo().spanSectionProduct}}</span>
+        <h2 class="principal_title_sections">{{getProductInfo().titleSectionProduct}}</h2>
+        <p class="description_change">{{getProductInfo().descriptionProductText}}</p>
+      </div>
+
+      <app-product-characteristic class="info_item" [descriptionItems]="getProductInfo().descriptionItems[0]"></app-product-characteristic>
+    </div>
+    <div class="info_column">
+      <app-product-characteristic class="info_item" [descriptionItems]="getProductInfo().descriptionItems[1]"></app-product-characteristic>
+      <app-product-characteristic class="info_item" [descriptionItems]="getProductInfo().descriptionItems[2]"></app-product-characteristic>
+    </div>
+  </section>
+
+  <!--Section 4-->
+  <div class="background_product"></div>
+  <section class="content_product__packs margin-container">
+    <div class="packs_title">
+      <span class="mini-texts" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().span}}</span>
+      <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().title}}</h2>
+    </div>
+    
+    <div class="packs_container" id="sc_pack_container">
+      <div class="pack" *ngFor="let pack of getPacksInfo().packs" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'pack_blue' : 'pack_orange'">
+        <div class="pack_info">
+          <div class=pack_icon>
+            <img [src]="pack.icon" alt="Icon">
+          </div>
+          <h3 class="pack_title">{{pack.name}}</h3>
+          <p class="pack_description">{{pack.description}}</p>
+        </div>
+        <a href="" class="pack_cta" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'cta_orange' : 'cta_blue'">{{pack.cta}}</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Commercialisation  Section 5-->
+<section class="section_marketing">
+  <!--Optional Div-->
+  <div class="marketing_title" *ngIf="width">
+    <span class="mini-texts">{{getMarketingInfo().span}}</span>
+    <h2 class="principal_title_sections">{{getMarketingInfo().title}}</h2>
+  </div>
+
+  <div class="margin-container content_marketing">
+    <div class="marketing_image">
+      <div class="background_marketing"></div>
+      <img src="../../assets/img/Commercialisation_image.png" alt="Man smiling with a computer">
+    </div>
+    <div class="marketing_info">
+      <div class="marketing_title" *ngIf="!width" >
+        <span class="mini-texts">{{getMarketingInfo().span}}</span>
+        <h2 class="principal_title_sections">{{getMarketingInfo().title}}</h2>
+      </div>
+      <div class="marketing_types" *ngFor="let type of getMarketingInfo().types">
+          <h3 class="type_card__title">Mode {{type.mode}}</h3>
+          <p class="type_card__description">{{type.description}}</p>
+          <a href="" class="type_card__link">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+</section>

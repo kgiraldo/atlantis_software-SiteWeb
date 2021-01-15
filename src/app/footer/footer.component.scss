@@ -1,0 +1,127 @@
+@import '../../styles.scss';
+
+.content_footer{
+  background: $grandient-blue;
+  margin-top: 100px;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 53px 0 25px 0;
+}
+
+.footer_column{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:last-child{
+    padding: 0 0 0 20%;
+    align-items: flex-start;
+    justify-content: stretch;
+  }
+}
+
+.footer_logo{
+  width: fit-content;
+  img{
+    max-width: 60%;
+  }
+}
+
+.footer_directions{
+  text-align: left;
+  margin-top: 10px;
+  .footer-title{
+    font-family: "Montserrat Extrabold",sans-serif;
+    font-size: 15px;
+    color:$c-white;
+    margin: 0;
+  }
+  .footer_text{
+    font-family: "Montserrat Light",sans-serif;
+    font-size: 14px;
+    color:$c-lightGray;
+    margin: 0;
+  }
+}
+
+.footer_mentions{
+  width: fit-content;
+  margin-top: 10px;
+  color:$c-lightGray;
+  font-size: 12px;
+  text-decoration: none;
+  opacity: 0.5;
+  text-decoration: underline;
+  transition: opacity 0.2s ease-in;
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.footer-title{
+  font-family:"Montserrat Extrabold",sans-serif;
+  font-size: 18px;
+  color: $c-white;
+  margin: 0;
+}
+
+.footer_text{
+  font-family: "Montserrat Light",sans-serif;
+  color: $c-lightGray;
+}
+
+.subscribe_input__content{
+  .subscribe_input__submit__footer{
+    background: $c-orange;
+    width: 10%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    &:hover{
+      transform: scale(1.02);
+    }
+  }
+}
+
+.rights{
+  color: $c-lightGray;
+  font-family: "Montserrat Light",sans-serif;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+// Responsive Footer
+@media only screen and (min-width: 375px) and (max-width: 800px) {
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer_column{
+    width: 100%;
+    flex-direction: row;
+    &:last-child{
+      display: none;
+    }
+  }
+
+  .footer_directions{
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1390px) {
+  .subscribe_input__content{
+    .subscribe_input__submit__footer{
+      width: 30%;
+    }
+  }
+}

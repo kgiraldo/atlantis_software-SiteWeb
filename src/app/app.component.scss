@@ -1,0 +1,157 @@
+@import '../styles.scss';
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-family: "Montserrat Medium";
+  font-size: 13px;
+}
+
+.nav-menu__logo{
+  width: 65%;
+}
+
+.logo__mobile{
+  display: none;
+}
+
+.logo__desktop{
+  display: flex;
+}
+
+.nav-menu__icon_mobile{
+  display: none;
+}
+
+.nav-menu__content{
+  display: flex;
+}
+
+.nav-menu__list{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  .nav-menu__list_item{
+    text-decoration: none;
+    margin-right: 55px;
+  }
+}
+
+.nav-menu__list_icon{
+  display: none;
+}
+
+.item__typeText{
+  color: $c-blue;
+  @include hover-underline('fade', 'bottom');   
+}
+
+.item__typeCta{
+  color: $c-white;
+  background-color: $c-orange;
+  padding: 12px 32px;
+  border-radius: 5px;
+  -webkit-transition: transform 0.2s ease-in;
+  -moz-transition: transform 0.2s ease-in;
+  -o-transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  &:hover{
+    transform: scale(1.04);
+  }
+}
+
+
+/*Responsive Menu*/
+@media only screen and (min-width: 375px) and (max-width: 800px) {
+  .header__container{
+    background: $c-blue;
+  }
+
+  .nav-menu{
+    padding: 27px 0;
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .logo__mobile{
+    display: flex;
+    width: 55%;
+  }
+
+  .logo__desktop{
+    display: none;
+  }
+
+  .nav-menu__icon_mobile{
+    display: flex;
+  }
+
+  .nav-menu__content{
+    position: fixed;
+    touch-action:auto;
+    right: 0;
+    z-index: 10;
+    top: 0;
+    flex-direction: column;
+    width: 80%;
+    height: 100vh;
+    background: $grandient-blue;
+    padding: 40px 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .nav-menu__list{
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+    .nav-menu__list_item_li{
+      flex-direction: column;
+    }
+    .nav-menu__list_item{
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .nav-menu__list_icon{
+    display: block;
+  }
+
+  .item__typeText{
+    color: $c-white;
+  }
+
+  .item__typeCta{
+    padding: 11px 19px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1390px) {
+  .nav-menu{
+    padding: 20px 0;
+    margin-top: 20px;
+    font-size: 11px;
+  }
+  .logo__mobile{
+    display: none;
+  }
+
+  .logo__desktop{
+    display: flex;
+    width: 55%;
+  }
+
+  
+  .nav-menu__list{
+    text-align: center;
+    .nav-menu__list_item{
+      margin-right: 20px;
+    }
+  }
+  
+}
