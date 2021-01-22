@@ -1,0 +1,126 @@
+@import '../../styles.scss';
+
+.module_container_atlantis{
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.modules_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 2%;
+  width: 30%;
+}
+
+.card_image{
+  width: fit-content;
+  img{
+    max-width: 80%;
+  }
+}
+
+.card_title{
+  font-family: "Montserrat Extrabold", sans-serif;
+  font-size: 20px;
+  color: $c-blue;
+  margin-top: 4%;
+}
+
+.card_list_characteristics{
+  font-family: "Montserrat Light",sans-serif;
+  font-size: 15px;
+  padding: 0;
+  list-style: none;
+  .item_list_characteristics{
+    color: $c-gray;
+    &::before{
+      content: "\2022";  
+      color: $c-gray; 
+      font-weight: bold; 
+      display: inline-block; 
+      width: 1em; 
+      margin-left: -1em; 
+    }
+  }
+}
+
+.pagination_container{
+  display: flex;
+  flex-direction: column;
+  .line_pagination{
+    width: 30%;
+    margin-right: 0;
+  }
+}
+
+
+.pagination_modules{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+  &::ng-deep .ngx-pagination{
+    padding: 0;
+    .pagination-previous a {
+      transition: transform 0.2s ease-in;
+      &:hover{
+        background: none;
+        transform: scale(1.01);
+      }
+      &:focus{
+        outline: none;
+      }
+      &::before{
+        content: url("../../assets/icons/arrow-circle-left.svg");
+      }
+    }
+    .pagination-next a{
+      transition: transform 0.2s ease-in;
+      &:hover{
+        background: none;
+        transform: scale(0.9);
+      }
+      &:focus{
+        outline: none;
+      }
+      &::after{
+        content: url("../../assets/icons/arrow-circle-right.svg");
+      }
+    }
+
+    .disabled{
+      opacity: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .modules_card{
+    width: 100%;
+    align-items: center;
+  }
+
+  .card_list_characteristics{
+    padding: 0 4%;
+  }
+
+  .pagination_container{
+    margin-top: 5%;
+    .line_pagination{
+      width: 50%;
+    }
+  }
+
+  .pagination_modules{
+    &::ng-deep .ngx-pagination .small-screen{
+      display: none;
+    }
+  }
+
+}

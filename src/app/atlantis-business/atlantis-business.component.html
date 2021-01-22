@@ -1,2 +1,29 @@
-<p>atlantis-business works!</p>
-<div></div>
+<!--Banner Atlantis Business-->
+<div class="banner_content margin-container">
+  <div class="banner_content__info">
+    <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getBannerInfo().title}}</h2>
+    <p class="description" [ngStyle]="{'color' : 'white'}">{{getBannerInfo().description}}</p>
+  </div>
+  <div class="banner_image_content">
+    <img src="../../assets/img/ab_imageBanner.png" alt="Business man smiling">
+  </div>
+</div>
+
+<!--Links-->
+<nav class ="nav_atlantis margin-container">
+  <ul class='atlantis_options'>
+    <div class="item_selected" id='sc_selector'></div>
+    <li *ngFor="let section of getNavOption().sections" (click)="clickOnSections(section.name)" class='atlantis_options__item'>{{section.name}}</li>
+  </ul>
+</nav>
+
+<!--Sections-->
+<div class="sections_container  margin-container">
+  <div class="sections_title">
+    <h2 class="principal_title_sections">{{getTittleSection().title}}</h2>
+    <p class="description_change margin_description" *ngIf="getTittleSection().description !== ''">{{getTittleSection().description}}</p>
+  </div>
+  <app-packages *ngIf="sections === 'packages'"></app-packages>
+  <app-modules *ngIf="sections === 'modules'"></app-modules>
+  <app-extensions *ngIf="sections === 'extensions'"></app-extensions>
+</div>

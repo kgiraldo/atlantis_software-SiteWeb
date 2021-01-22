@@ -1,0 +1,259 @@
+@import '../../styles.scss';
+
+.grid_extensions{
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 25px;
+  grid-template-areas: "b2b b2b b2c"
+                        "nomade contact b2c";
+}
+
+.extension_card_info{
+  display: flex;
+  flex-direction: column;
+  .extension_title{
+    font-family: "Montserrat Extrabold", sans-serif;
+    font-size: 60px;
+    margin: 0;
+  }
+  .extension_list_items{
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .extension_button{
+    background: none;
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 12px;
+    border: none;
+    padding: 0;
+    width: fit-content;
+    letter-spacing: 1px;
+    align-self: flex-end;
+    position: relative;
+    transition: all 0.2 ease-in;
+    &::after{
+      content: url(../../assets/icons/arrow-right-short.svg);
+      position: absolute;
+      left: 110%;
+      top:11%;
+      opacity: 0.2;
+    }
+  }
+}
+
+.extension_card{
+  display: flex;
+  width: 100%;
+  &:nth-child(1){
+    grid-area: b2b;
+    align-items: center;
+    background: $c-bone;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius:15px ;
+    .extension_card_image {
+      img{
+        max-width: 78%;
+        box-shadow: 10px 0px 9px -1px rgba(0,0,0,0.02);
+        -webkit-box-shadow: 10px 0px 9px -1px rgba(0,0,0,0.02);
+        -moz-box-shadow: 10px 0px 9px -1px rgba(0,0,0,0.02);;
+      }
+    }
+    
+    .extension_card_info{
+      width: 60%;
+      height: 100%;
+      justify-content: space-around;
+      padding: 0 7% 0 0;
+      .extension_title{
+        color: $c-blue;
+        margin-top: 10%;
+      }
+      .extension_list_items{
+        color: $c-gray;
+      }
+      .extension_button{
+        color: $c-lightGray;
+        &:hover { 
+          color: $c-blue;
+          &::after{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &:nth-child(2){
+    grid-area: b2c;
+    flex-direction: column;
+    background: $c-blue;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    .extension_card_image img{
+      max-width: 100%;
+      box-shadow: -1px 21px 7px -11px rgba(4,54,113,0.04);
+      -webkit-box-shadow: -1px 21px 7px -11px rgba(4,54,113,0.04);
+      -moz-box-shadow: -1px 21px 7px -11px rgba(4,54,113,0.04);
+    }
+
+    .extension_card_info{
+      padding: 24% 10% 5% 10%;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      color: $c-white;
+      .extension_button{
+        margin-top: 23%;
+        color: $c-white;
+        opacity: 0.2;
+        &:hover{
+          opacity: 1;
+          &::after{
+            opacity: 1;
+          }
+        }
+        &::after{
+          content: url("../../assets/icons/arrow-right-short_white.svg");
+        }
+      }
+    }
+  }
+  &:nth-child(3){
+    grid-area: nomade;
+    background: $c-orange;
+    border-radius: 15px;
+
+    .extension_card_info{
+      width: 100%;
+      padding: 20% 12% 8% 10%;
+      color: $c-white;
+      .extension_button{
+        margin-top: 20%;
+        color: $c-white;
+        opacity: 0.2;
+        &:hover{
+          opacity: 1;
+          &::after{
+            opacity: 1;
+          }
+        }
+        &::after{
+          content: url("../../assets/icons/arrow-right-short_white.svg");
+        }
+      }
+    }
+  }
+  &:nth-child(4){
+    grid-area: contact;
+    background: $c-bone;
+    border-radius: 15px;
+    .extension_card_info{
+      width: 100%;
+      padding: 20% 12% 8% 10%;
+      .extension_title{
+        color: $c-blue;
+      }
+      .extension_list_items{
+        columns: $c-gray;
+      }
+      .extension_button{
+        color: $c-lightGray;
+        margin-top: 20%;
+        &:hover { 
+          color: $c-blue;
+          &::after{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .grid_extensions{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "b2b"
+                          "nomade" 
+                          "contact"
+                          "b2c";
+  }
+
+  .extension_card_info .extension_title{
+    font-size: 40px;
+  }
+
+  .extension_card{
+    border-radius: 15px;
+    .extension_card_image{ 
+      display: none;
+    }
+    &:nth-child(1) .extension_card_info {
+      width: 100%;
+      height: 70%;
+      padding: 0 13% 0 13%;
+    }
+    &:nth-child(2) .extension_card_info{
+      padding: 7% 13% 5% 10%;
+      .extension_button{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1090px) {
+  .grid_extensions{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "b2b b2b b2b "
+                          "nomade contact b2c";
+  }
+
+  .extension_card_info .extension_title{
+    font-size: 40px;
+  }
+
+  .extension_card{
+    &:nth-child(1){
+      .extension_card_image img{
+        max-width: 100%;
+        height: 100%;
+      }
+      .extension_card_info{
+        padding: 0 7% 0 7%;
+      }
+    }
+
+    &:nth-child(2){
+      border-radius: 15px;
+      .extension_card_image img{
+        display: none;
+      }
+      .extension_card_info{
+        justify-content: space-around;
+        padding: 24% 15% 5% 10%;
+      }
+    }
+
+    &:nth-child(3), &:nth-child(4){
+      .extension_card_info{
+        padding: 24% 15% 5% 10%;
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+
+
+
+
+

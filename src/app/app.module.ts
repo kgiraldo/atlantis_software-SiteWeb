@@ -11,6 +11,11 @@ import { AtlantisBusinessComponent } from './atlantis-business/atlantis-business
 import { CommersialisationComponent } from './commersialisation/commersialisation.component';
 import { RecrutementComponent } from './recrutement/recrutement.component';
 import { ContactComponent } from './contact/contact.component';
+import { PackagesComponent } from './packages/packages.component';
+import { ModulesComponent } from './modules/modules.component';
+import { ExtensionsComponent } from './extensions/extensions.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DragScrollModule } from 'ngx-drag-scroll';
 
 
 @NgModule({
@@ -24,13 +29,19 @@ import { ContactComponent } from './contact/contact.component';
     CommersialisationComponent,
     RecrutementComponent,
     ContactComponent,
+    PackagesComponent,
+    ModulesComponent,
+    ExtensionsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HammerModule
+    HammerModule,
+    NgxPaginationModule,
+    DragScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}

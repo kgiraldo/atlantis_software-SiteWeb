@@ -1,0 +1,20 @@
+<div class="module_container_atlantis">
+  <div class="modules_card" *ngFor="let module of getModules() | paginate: { itemsPerPage: 6, currentPage: p }" >
+    <!--Image-->
+    <div class="card_image"><img [src]="module.image" alt="Icon"></div>
+    <!--Title-->
+    <h3 class="card_title">{{module.name}}</h3>
+    <!--List Descriptions-->
+    <ul class="card_list_characteristics">
+      <li class="item_list_characteristics" *ngFor="let charac of module.characteristics">{{charac}}</li>
+    </ul>
+  </div>
+</div>
+
+<!--Pagination-->
+<div class="pagination_container">
+  <hr class="line_pagination">
+  <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" [maxSize]="0"  class="pagination_modules"></pagination-controls>
+</div>
+
+

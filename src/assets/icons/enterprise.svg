@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.5" height="31.5" viewBox="0 0 31.5 31.5">
+  <g id="enterprise" transform="translate(-2.25 -2.25)">
+    <path id="Tracé_665" data-name="Tracé 665" d="M9,9h2.25v4.5H9Z" fill="#133854"/>
+    <path id="Tracé_666" data-name="Tracé 666" d="M9,15.75h2.25v4.5H9Z" fill="#133854"/>
+    <path id="Tracé_667" data-name="Tracé 667" d="M15.75,9H18v4.5H15.75Z" fill="#133854"/>
+    <path id="Tracé_668" data-name="Tracé 668" d="M15.75,15.75H18v4.5H15.75Z" fill="#133854"/>
+    <path id="Tracé_669" data-name="Tracé 669" d="M9,22.5h2.25V27H9Z" fill="#133854"/>
+    <path id="Tracé_670" data-name="Tracé 670" d="M15.75,22.5H18V27H15.75Z" fill="#133854"/>
+    <path id="Tracé_671" data-name="Tracé 671" d="M33.75,15.75A2.25,2.25,0,0,0,31.5,13.5H24.75v-9A2.25,2.25,0,0,0,22.5,2.25H4.5A2.25,2.25,0,0,0,2.25,4.5V33.75h31.5ZM4.5,4.5h18v27H4.5Zm20.25,27V15.75H31.5V31.5Z" fill="#133854"/>
+  </g>
+</svg>

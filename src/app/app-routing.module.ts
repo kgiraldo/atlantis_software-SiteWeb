@@ -9,7 +9,8 @@ import { RecrutementComponent } from './recrutement/recrutement.component';
 const routes: Routes = [
   {path:"", component: HomeComponent},
   {path:"atlantis", component: AtlantisBusinessComponent},
-  {path:"commersialisation", component: CommersialisationComponent},
+  {path:"atlantis/:id", component: AtlantisBusinessComponent},
+  {path:"commersialisation/:id", component: CommersialisationComponent},
   {path:"recrutement", component: RecrutementComponent},
   {path:"contact", component: ContactComponent}
 ];

@@ -1,12 +1,13 @@
 <!--Navigation Bar-->
-<header class="header__container ">
+<header class="header__container" [ngStyle]="{'background' : getBackgroundColorMenu()}">
   <nav class="margin-container nav-menu">
     <div class="nav-menu__header">
-      <a routerLink="/"><img src="../assets/img/logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__desktop"></a>
-      <a routerLink="/"><img src="../assets/img/mobile_logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__mobile"></a>
+      <a routerLink="/" [ngStyle]="{'display' : getMenuStyleBlue()}"><img src="../assets/img/logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__desktop"></a>
+      <a routerLink="/" [ngStyle]="{'display' : getMenuStyleWhite()}"><img src="../assets/img/mobile_logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__mobile"></a>
     </div>
-    <div class="nav-menu__icon_mobile" (click)="openMenuMobile()">
-      <img src="../assets/icons/menu.svg" alt="Icon menu burger">
+    <div class="nav-menu__icon_mobile" (click)="openMenuMobile()" >
+      <img src="../assets/icons/menu.svg" alt="Icon menu burger" [ngStyle]="{'display' : getMenuStyleWhite()}">
+      <img src="../assets/icons/menu_blue.svg" alt="Icon menu burger" [ngStyle]="{'display' : getMenuStyleBlue()}">
     </div>
     
     <div class="nav-menu__content" id="sc_content_menu" *ngIf="showMenu" [ngClass]="{'slide_left': showMenu}">

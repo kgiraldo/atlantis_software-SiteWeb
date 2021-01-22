@@ -414,7 +414,7 @@
 
 
 /*Responsive Home*/
-@media only screen and (min-width: 375px) and (max-width: 800px) {
+@media only screen and (min-width: 350px) and (max-width: 800px) {
   .content_banner{
     background: $c-blue;
     flex-direction: column;
@@ -424,13 +424,14 @@
 
   .containerHome{
     flex-direction: column;
-    margin-top: 40px;
-    padding: 0 10px;
+    margin-top: 60px;
+    padding: 30px 10px;
     width: fit-content;
   }
 
   .content_banner__info{
     width: 100%;
+    margin-right: 0;
   }
 
   .important_text{
@@ -440,6 +441,13 @@
 
   .subscribe_input__content{
     margin-top: 20px;
+    .subscribe_input{
+      width: 70%;
+    }
+    .subscribe_input__submit{
+      background: $c-orange;
+      width: 30%;
+    }
   }
 
   .content_baner__image{
@@ -470,11 +478,15 @@
   .square_blue__small{
     width: 174px;
     height: 92px;
-    top: 65%;
+    top: 50%;
     left: 57%;
   }
 
   //Section1
+  .content_entreprise{
+    padding-top: 50px;
+  }
+
   .society_description{
     flex-direction: column;
     margin-top: 50px;
@@ -510,10 +522,12 @@
     margin-top: 80px;
     justify-content: center;
     .service_card{
-      margin-right: 50px;
-      &:nth-child(1){
-        margin-left: 45px;
+      width: 45%;
+      margin-right: 0;
+      &:nth-child(1), &:nth-child(3),&:nth-child(5) {
+        margin-right: 0;
       }
+     
     }
   }
 

@@ -1,0 +1,150 @@
+@import '../../styles.scss';
+
+.banner_content{
+  display: flex;
+  background: $grandient-blue;
+  border-radius: 15px;
+  align-items: center;
+  margin-top: 5%;
+  position: relative;
+}
+
+.banner_content__info{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 90px 80px;
+  .description{
+    width: 80%;
+  }
+}
+
+.banner_image_content{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  img{
+    max-width: 56%;
+  }
+}
+
+.nav_atlantis{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 2%;
+  .atlantis_options{
+    display: flex;
+    list-style: none;
+    background: $c-bone;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    .atlantis_options__item{
+      margin-right: 10px;
+      padding: 0 20px 0 0;
+      display: flex;
+      color: $c-lightGray;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      font-family:  "Montserrat Light",sans-serif;
+      font-size: 15px;
+      transition: all 0.2s ease-in;
+      &:hover{
+        color:$c-blue;
+      }
+      &:last-child{
+        padding: 0;
+      }
+    }
+
+    .item_selected{
+      position: absolute;
+      background: $c-blue;
+      bottom: 0;
+      left: 0;
+      width: 27%;
+      height: 5%;
+    }
+  }
+}
+
+.sections_container{
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  .sections_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .margin_description{
+      width: 50%;
+      text-align: center;
+    }
+  }
+}
+
+
+/*Responsive  Atlantis Business*/
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+
+  .banner_content__info{
+    width: 100%;
+    padding: 50px 35px;
+  }
+
+  .banner_image_content{
+    display: none;
+  }
+
+  .nav_atlantis{
+    margin-top: 20px;
+    .atlantis_options{
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+
+  .sections_container .sections_title .margin_description{
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1120px){
+  .banner_content{
+    margin-top: 7%;
+  }
+
+  .banner_content__info{
+    padding: 40px 24px 49px 39px;
+    .principal_title_sections{
+      font-size: 31px;
+    }
+  }
+
+  .banner_image_content{
+    width: 50%;
+    img{
+      max-width: 60%;
+    }
+  }
+
+  .sections_container .sections_title .margin_description{
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1120px) and (max-width: 1700px){
+  .banner_image_content{
+    img{
+      max-width: 65%;
+    }
+  }
+}

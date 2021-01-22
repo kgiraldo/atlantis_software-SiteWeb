@@ -1,1 +1,64 @@
-<p>commersialisation works!</p>
+<div class="marketing_container margin-container">
+  <!--Header-->
+  <div class="marketing_header">
+    <!--Title-->
+    <div class="marketing_title_container">
+      <h2 class="principal_title_sections">Atlantis Business</h2>
+      <p class="description_change">est disponible en mode SASS et Acquisition</p>
+    </div>
+    <!--Nav-->
+    <nav class="nav_marketing">
+      <ul class="marketing_list">
+        <li class="marketing_item" *ngFor="let mode of getModeMarketing()" (click)="clickOnTypeMarketing(mode)">{{mode}}</li>
+      </ul>
+      <hr class="line_nav">
+      <div class="selector_type" id="sc_selector_type"></div>
+    </nav>
+  </div>
+
+  <!--Banner-->
+  <div class="banner_content">
+    <div class="banner_content__info">
+      <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getBannerInfo().title}}</h2>
+      <p class="description" [ngStyle]="{'color' : 'white'}">{{getBannerInfo().description}}</p>
+    </div>
+    <div class="banner_image_content">
+      <img [src]="getBannerInfo().image" alt="Business people smiling">
+    </div>
+  </div>
+
+  <!--General Information-->
+  <div class="container_information">
+    <!--Information Text-->
+    <p class ="information_markerting" [innerHTML]="getBannerInfo().information"></p>
+    <!--Steps   COnditional Div-->
+    <div class="marketing_steps" *ngIf="getBannerInfo().steps">
+      <div class="steps_item" *ngFor="let step of getBannerInfo().steps">
+        <h3 class="step_title">{{step.order}}. {{step.name}}</h3>
+        <p class="step_description">{{step.description}}</p>
+      </div>
+    </div>
+    <!--Benefits-->
+    <div class="marketing_benefits">
+      <img src="../../assets/icons/rocket.svg" alt="Rocket Icon">
+      <h3 class="title_text">Bénéfices client</h3>
+    </div>
+  </div>
+</div>
+
+<!--Carousel-->
+<drag-scroll class="carousel_marketing_benefits" #sc_carousel_benefits>
+  <div drag-scroll-item class="benefit_item" *ngFor="let benefit of getBannerInfo().benefits">
+    <div class="container_info_benefit">
+      <!--Icon-->
+      <div class="benefit_icon">
+        <img [src]="benefit.icon" alt="Icon">
+      </div>
+      <!--Information-->
+      <div class="benefit_information">
+        <h4 class="benefit_title">{{benefit.title}}</h4>
+        <p class="benefit_description">{{benefit.description}}</p>
+      </div>
+    </div>
+  </div>
+</drag-scroll>

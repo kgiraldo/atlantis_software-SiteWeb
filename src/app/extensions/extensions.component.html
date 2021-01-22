@@ -1,0 +1,17 @@
+<div class="grid_extensions">
+  <article class="extension_card" *ngFor="let extension of getExtensionInfo()">
+		<div class="extension_card_image" *ngIf="extension.image.img !== '' ">
+			<img [src]="extension.image.img" alt="extension.image.alt">
+		</div>
+
+		<div class="extension_card_info">
+			<div>
+			  <h3 class="extension_title">{{extension.name}}</h3>
+			  <ul class="extension_list_items">
+				  <li class="extension_item" *ngFor="let item of extension.types">{{item}}</li>
+			  </ul>
+		    </div>
+			<button class="extension_button">En Savoir plus</button>
+		</div>
+  </article>
+</div>

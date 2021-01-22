@@ -1,0 +1,29 @@
+<div class="pack_container_atlantis">
+  <div class="pack_card" *ngFor="let pack of getPackInformation()" [ngStyle]="{'background':(pack.name === 'Pack Essentiel') ? '#133854' : '#f5f5f5' }">
+    <!--Title-->
+    <div class='card_title_content'>
+      <h3 class="title_pack_card" [ngStyle]="{'color':(pack.name === 'Pack Essentiel') ? '#fff' : '#133854' }">{{pack.name}}</h3>
+      <p class="description_pack_card" [ngStyle]="{'color':(pack.name === 'Pack Essentiel') ? '#fff' : '#535353' }">{{pack.description}}</p>
+    </div>
+
+    <!--Description-->
+    <div class="card_description_content">
+      <ul class="list_descriptions">
+        <li class="item_list__description" *ngFor="let charac of pack.characteristic" [ngStyle]="{'color':(pack.name === 'Pack Essentiel') ? '#fff' : '#133854' }">
+          <div class="icon_list"><img src="../../assets/icons/check-circle.svg" alt="Icon check cirlce"></div>
+          {{charac.title}}
+          <p class='item_description'>{{charac.explanation}}</p>
+        </li>
+      </ul>
+      <!--Just for Pilot and Evolution Pack-->
+      <p class="explanation_text" *ngIf="pack.aditional !== ''">{{pack.aditional}}</p>
+
+      <!--Button-->
+      <div class="card_links_container">
+        <button class="card_cta"[ngStyle]="{'background':(pack.name === 'Pack Essentiel') ? '#fe5002' : '#133854' }">obtenir package</button>
+        <span class="card_terms" [ngStyle]="{'color':(pack.name === 'Pack Essentiel') ? '#fff' : '#535353' }">Un expert vous contactera ou appelez le 04 37 40 04 30 </span>
+      </div>
+      
+    </div>
+  </div>
+</div>

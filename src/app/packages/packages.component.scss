@@ -1,0 +1,135 @@
+@import '../../styles.scss';
+
+.pack_container_atlantis{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.pack_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 2%;
+  background: $c-bone;
+  padding: 7% 3%;
+  border-radius: 12px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.card_title_content{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  .title_pack_card{
+    font-family: "Montserrat Extrabold", sans-serif;
+    font-size: 40px;
+    color: $c-blue;
+  }
+  .description_pack_card{
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 18px;
+    color: $c-gray;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: -10px;
+      background: $c-white;
+    }
+  }
+}
+
+.card_description_content{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list_descriptions{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  .item_list__description{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: "Montserrat Extrabold", sans-serif;
+    font-size: 18px;
+    color: $c-blue;
+    //Icon
+    .icon_list{
+      margin-right: 3%;
+      img{
+        max-width: 90%;
+      }
+    }
+    //Text
+    .item_description{
+      font-family: "Montserrat Light", sans-serif;
+      font-size: 15px;
+    }
+  }
+}
+
+.explanation_text{
+  font-family: "Montserrat Extrabold", sans-serif;
+  color: $c-blue;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.card_links_container{
+  margin-top: 9%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .card_terms{
+    margin-top: 2%;
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 12px;
+    color: $c-gray;
+    text-align: center;
+  }
+}
+
+.card_cta{
+  width: 100%;
+  padding: 18px;
+  background: $c-blue;
+  border: none;
+  color: $c-white;
+  border-radius: 5px;
+  font-family: "Montserrat Light", sans-serif;
+  font-size: 15px;
+  transition: transform 0.2s ease-in;
+  &:hover{
+    transform: scale(1.01);
+  }
+}
+
+/////Responsive /////
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .pack_container_atlantis{
+    flex-direction: column;
+  }
+
+  .pack_card{
+    margin-bottom: 5%;
+    padding: 7% 7%;
+  }
+
+  .list_descriptions{
+    align-self: flex-start;
+  }
+}
