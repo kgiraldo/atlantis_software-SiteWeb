@@ -17,6 +17,8 @@ import { ExtensionsComponent } from './extensions/extensions.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { JobOffertComponent } from './job-offert/job-offert.component';
+import { AgmCoreModule } from '@agm/core';
+import { MentionLegaleComponent } from './mention-legale/mention-legale.component';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { JobOffertComponent } from './job-offert/job-offert.component';
     ModulesComponent,
     ExtensionsComponent,
     JobOffertComponent,
+    MentionLegaleComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,9 @@ import { JobOffertComponent } from './job-offert/job-offert.component';
     HammerModule,
     NgxPaginationModule,
     DragScrollModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDTnJ2wsNtaEz47_OPc9t8PjI70QUSc7p8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,6 +25,7 @@
 
 .footer_logo{
   width: fit-content;
+  cursor: pointer;
   img{
     max-width: 60%;
   }
@@ -50,6 +51,7 @@
 .footer_mentions{
   width: fit-content;
   margin-top: 10px;
+  cursor: pointer;
   color:$c-lightGray;
   font-size: 12px;
   text-decoration: none;

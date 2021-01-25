@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  //Map Variables
+  lat=45.73093252052653;
+  lng=4.929725704731475;
+  zoom=15;
+
+  //Width 
+  width:boolean;
+
+  constructor() { 
+    if(window.innerWidth >=350 && innerWidth<=800){
+      this.width =true;
+    } else {
+      this.width =false;
+    }
+  }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('window:resize', ['$event']) 
+  getSizeWindow(event:any){
+    if(event.target.innerWidth >=350 && event.target.innerWidth <=800 ){
+      this.width =true;
+    }else{
+      this.width =false;
+    }
   }
 
 }

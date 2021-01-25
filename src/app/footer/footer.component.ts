@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,14 @@ export class FooterComponent implements OnInit {
         { name: "Siège social", address: "10 Bd de la Foire | 1528, Luxembourg "}
       ]
     };
+  }
+
+  clickMentionLegale(){
+    this.router.navigate(['/mention-legales']);
+  }
+
+  clickHome(){
+    this.router.navigate(['/']);
   }
 
 }

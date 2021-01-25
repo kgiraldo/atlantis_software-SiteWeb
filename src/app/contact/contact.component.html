@@ -1,1 +1,126 @@
-<p>contact works!</p>
+<div class="margin-container contact-container">
+  <!--Title-->
+  <div class="contact_title">
+    <span class="mini-texts">SOCIÉTÉ</span>
+    <h2 class="principal_title_sections">Contact</h2>
+    <p class="description_change text-center">N'hésitez pas à nous contacter si vous souhaitez des renseignements. </p>
+  </div>
+
+  <div class="container_form_contact">
+    <div class="general_contact">
+      <h3 class="general_title">Information de contact</h3>
+      <p class="general_description">Nous sommes à votre disposition du lundi au vendredi pour vous accompagner dans l'étude de vos projets.</p>
+      <div class="info_container">
+        <img src="../../assets/icons/phone-handset-line.svg" alt="Telephone Icon">
+        <div class="information">
+          <span class="text_container">( +325 ) 20 88 21 25 </span>
+          <span class="text_container">( +33 ) 4 37 40 04 30 </span>
+        </div>
+      </div>
+
+      <div class="info_container">
+        <img src="../../assets/icons/map-marker-line.png" alt="Map marker icon">
+        <div class="information">
+          <span class="text_container">10 Bd de la Foire, 1528 Luxembourg</span>
+          <span class="text_container">12 Rue Edinson, 69500 Bron </span>
+        </div>
+      </div>
+
+      <div class="info_container">
+        <img src="../../assets/icons/email.svg" alt="Email icon">
+        <div class="information">
+          <span class="text_container">info@atlantis-software.net</span>
+        </div>
+      </div>
+    </div>
+
+    <form action="" class="contact_form">
+      <label class="label_form">
+        Choisissez le sujet
+        <!--Desktop View-->
+        <div class="d-flex justify-content-between mt-2" *ngIf="!width">
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="rdv" id="sc_rdv" class="input_radio">
+            <label for="sc_rdv">Prendre un RDV</label>
+          </div>
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="information" id="sc_info" class="input_radio">
+            <label for="sc_info">Informations</label>
+          </div>
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="assistance" id="cs_assistance" class="input_radio">
+            <label for="cs_assistance">Assistance</label>
+          </div>
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="epr" id="sc_epr" class="input_radio">
+            <label for="sc_epr">Projet EPR</label>
+          </div>
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="partner" id="sc_partner" class="input_radio">
+            <label for="sc_partner">Devenir partenaire</label>
+          </div>
+          <div class="input_radio_container">
+            <input type="radio" name="sujet_contact" value="other" id="sc_other" class="input_radio">
+            <label for="sc_other">Autre</label>
+          </div>
+        </div>
+        <!--Mobile View-->
+        <select class="input_form" *ngIf="width">
+          <option value="">Choisissez un sujet</option>
+          <option value="rdv">Prendre un RDV</option>
+          <option value="information">Informations</option>
+          <option value="assistance">Assistance</option>
+          <option value="epr">Projet EPR</option>
+          <option value="partner">Devenir partenaire</option>
+          <option value="other">Autre</option>
+        </select>
+      </label>
+      <label class="label_form">
+        Nom
+        <input type="text" class="input_form" placeholder="Pierre">
+      </label>
+      <label class="label_form">
+        Prénom
+        <input type="text" class="input_form" placeholder="Dupont">
+      </label>
+      <label class="label_form">
+        Fonction
+        <input type="text" class="input_form" placeholder="Manager">
+      </label>
+      <label class="label_form">
+        Societé
+        <input type="text" class="input_form" placeholder="Nom de votre entreprise">
+      </label>
+      <label class="label_form">
+        Téléphone
+        <input type="text" class="input_form" placeholder="0778955674">
+      </label>
+      <label class="label_form">
+        Email
+        <input type="email" class="input_form" placeholder="example@mail.com">
+      </label>
+      <label class="label_form">
+        Adresse
+        <input type="text" class="input_form" placeholder="12 rue Edinson">
+      </label>
+      <label class="label_form">
+        Ville et Code postale
+        <input type="text" class="input_form" placeholder="69500">
+      </label>
+      <label class="label_form">
+        Message
+        <textarea name="" id="" cols="30" rows="5" class="text_area" placeholder="écrire un message"></textarea>
+      </label>
+      <input type="submit" class="btn_submit">
+    </form>
+  </div>
+
+  <!--Title Map-->
+  <div class="map_container">
+    <h2 class="principal_title_sections">Trouvez-nous</h2>
+    <p class="description_change">Nous sommes à votre disposition pour améliorer votre activité négoce. </p>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

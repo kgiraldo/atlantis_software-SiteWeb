@@ -14,7 +14,7 @@
       <img src="../assets/icons/close.svg" alt="Icon menu burger" class="nav-menu__list_icon" (click)="closeMenuMobile()">
       <ul class="nav-menu__list">
         <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of getMenuInfo().menuItems" [routerLink]="item.linked" class="nav-menu__list_item item__typeText">{{item.name}}</a></li>
-        <a *ngFor="let button of getCtaInfo().cta" [href]="button.linked" class="nav-menu__list_item item__typeCta">{{button.value}}</a>
+        <a *ngFor="let button of getCtaInfo().cta" [href]="button.linked" class="item__typeCta">{{button.value}}</a>
       </ul>
     </div>
   </nav>
