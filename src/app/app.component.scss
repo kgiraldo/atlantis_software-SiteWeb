@@ -43,7 +43,7 @@
 
 .item__typeText{
   color: $c-blue;
-  @include hover-underline('fade', 'bottom');   
+  @include hover-underline('fade', 'bottom');  
 }
 
 .item__typeCta{

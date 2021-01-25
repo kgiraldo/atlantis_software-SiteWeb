@@ -1,0 +1,16 @@
+<div class="job_offerts_container">
+  <div class="offert" *ngFor="let offert of offerts | paginate: { itemsPerPage: 3, currentPage: p }">
+    <h3 class="title_offert">{{offert.charge}}</h3>
+    <div class="offert_description">
+      <p class="general_description" [innerHTML]="offert.description"></p>
+      <h4 class="important_text">{{offert.important}}</h4>
+      <span class="date">Date de publication: {{offert.date}} </span>
+    </div>
+  </div>
+</div>
+
+<!--Pagination-->
+<div class="pagination_container">
+  <hr class="line_pagination">
+  <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" [maxSize]="0"  class="pagination_modules"></pagination-controls>
+</div>

@@ -20,7 +20,7 @@
 <!--Sections-->
 <div class="sections_container  margin-container">
   <div class="sections_title">
-    <h2 class="principal_title_sections">{{getTittleSection().title}}</h2>
+    <h2 class="principal_title_sections text-center">{{getTittleSection().title}}</h2>
     <p class="description_change margin_description" *ngIf="getTittleSection().description !== ''">{{getTittleSection().description}}</p>
   </div>
   <app-packages *ngIf="sections === 'packages'"></app-packages>

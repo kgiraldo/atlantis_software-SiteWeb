@@ -208,7 +208,7 @@ export class CommersialisationComponent implements OnInit, DoCheck {
     }
   }
 
-
+//Touch Events
   @HostListener('document:touchmove', ['$event'])
   moveSlider(event:any){
     event.preventDefault();

@@ -1,0 +1,75 @@
+@import '../../styles.scss';
+
+.job_offerts_container{
+  display: flex;
+  flex-direction: column;
+  //Offert
+  .offert{
+    background: $c-bone;
+    border-radius: 5px;
+    padding: 3% 2% 2% 5%;
+    margin-bottom: 1%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .title_offert{
+      width: 30%;
+      font-family: "Montserrat Extrabold", sans-serif;
+      color: $c-blue;
+      font-size: 20px;
+      text-transform: uppercase;
+      position: relative;
+      margin-right: 2%;
+      &::after{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $c-blue;
+      }
+    }
+
+    //Text
+    .offert_description{
+      display: flex;
+      flex-direction: column;
+      font-family:  "Montserrat Light", sans-serif;
+      .general_description{
+        color: $c-gray;
+      }
+      .important_text{
+        color: $c-blue;
+        font-family: "Montserrat Extrabold", sans-serif;
+        font-size: 18px;
+        margin-top: 2%;
+      } 
+      .date{
+        align-self: flex-end;
+        margin-top: 3%;
+        font-size: 12px;
+        color: $c-lightGray;
+      }
+    }
+  }
+}
+
+/*Responsives Views*/
+@media only screen and (min-width: 350px) and (max-width: 800px){
+  .job_offerts_container .offert {
+    flex-direction: column;
+    padding: 5%;
+    .title_offert{
+      width: 100%;
+      text-align: center;
+      &::after{
+        height: 0;
+      }
+    }
+    .offert_description{
+      margin: 2%;
+    }
+  }
+}

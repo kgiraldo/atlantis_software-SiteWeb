@@ -131,6 +131,57 @@ body{
   }
 }
 
+.pagination_container{
+  display: flex;
+  flex-direction: column;
+  .line_pagination{
+    width: 30%;
+    margin-right: 0;
+  }
+}
+
+
+.pagination_modules{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+  &::ng-deep .ngx-pagination{
+    padding: 0;
+    .pagination-previous a {
+      transition: transform 0.2s ease-in;
+      &:hover{
+        background: none;
+        transform: scale(1.01);
+      }
+      &:focus{
+        outline: none;
+      }
+      &::before{
+        content: url("assets/icons/arrow-circle-left.svg");
+      }
+    }
+    .pagination-next a{
+      transition: transform 0.2s ease-in;
+      &:hover{
+        background: none;
+        transform: scale(0.9);
+      }
+      &:focus{
+        outline: none;
+      }
+      &::after{
+        content: url("assets/icons/arrow-circle-right.svg");
+      }
+    }
+
+    .disabled{
+      opacity: 0;
+    }
+  }
+}
+
 
 /*mixin Hover Animation*/
 @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: $c-orange) {
@@ -202,6 +253,19 @@ body{
 
   .mini-texts{
     font-size: 12px;
+  }
+
+  .pagination_container{
+    margin-top: 5%;
+    .line_pagination{
+      width: 50%;
+    }
+  }
+
+  .pagination_modules{
+    &::ng-deep .ngx-pagination .small-screen{
+      display: none;
+    }
   }
 
 }

@@ -1,0 +1,309 @@
+@import '../../styles.scss';
+
+.hire_container{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hire_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .hire_title_container{
+    width: 30%;
+  }
+  .hire_search_bar{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .search_items{
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      font-family: "Montserrat Light", sans-serif;
+      font-size: 15px;
+      color: $c-gray;
+      align-items: center;
+      margin-bottom: 2%;
+      //Search Input
+      .search_bar{
+        border: none;
+        background: $c-bone;
+        border-radius: 5px;
+        padding:  1% 2% 1% 4%;
+        margin-right: 5%;
+        background-color: $c-bone;
+        background-image: url("../../assets/icons/search.svg");
+        background-repeat: no-repeat;
+        background-position: 15px;
+        &::placeholder{
+          color:$c-lightGray;
+        }
+        &:focus{
+          outline: none;
+        }
+        &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration{
+          display: none;
+          width: 0;
+          height: 0;
+        }
+      }
+      //Label Select
+      .label_bar{
+        margin: 0;
+      }
+      //Select
+      .select_input{
+        background: $c-bone;
+        border-radius: 5px;
+        padding:  1% 2%;
+        border: none;
+        margin-left: 2%;
+        color: $c-lightGray;
+        option{
+          color: $c-gray;
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+
+    //Line
+    .line_nav{
+      width: 90%;
+      margin: 0;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $c-orange;
+        width: 80%;
+        height: 2px;
+      }
+    }
+  }
+}
+
+//Contact Form
+.contact_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4%;
+  width: 100%;
+  //Image Container
+  .image_container{
+    width: 50%;
+    position: relative;
+    img{
+      max-width: 100%;
+    }
+    .background_image{
+      width: 288px;
+      background: $grandient-blue;
+      height: 400px;
+      position: absolute;
+      top: 20%;
+      z-index: -1;
+      left: -20%;
+    }
+  }
+
+  //Form Container
+  .contact_information{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    //Form
+    .form_contact_job{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      
+      //Label
+      .label_form{
+        color: $c-gray;
+        width: 50%;
+        font-family: "Montserrat Medium", sans-serif;
+        color: $c-blue;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        &:last-of-type{
+          width: 100%;
+        }
+        //Input
+        .input_form{
+          font-family: "Montserrat Light", sans-serif;
+          width: 90%;
+          margin-top: 3%;
+          background: $c-bone;
+          border-radius: 5px;
+          border: none;
+          padding: 2% 5%;
+          font-size: 15px;
+          &::placeholder{
+            color: $c-lightGray;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+
+        //Input File
+        .input_file{
+          margin-top: 3%;
+          color: $c-lightGray;
+          font-family: "Montserrat Light", sans-serif;
+          font-size: 15px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &::-webkit-file-upload-button{
+            background: $c-orange;
+            font-family: "Montserrat Light", sans-serif;
+            color: $c-white;
+            font-size: 12px;
+            border: none;
+            border-radius: 5px;
+            padding: 2% 3%;
+            width: 40%;
+            margin-right: 3%;
+          }
+        }
+
+        //Input Mssage
+        .input_message{
+          border: none;
+          font-family: "Montserrat Light", sans-serif;
+          background: $c-bone;
+          color: $c-gray;
+          margin-top: 2%;
+          border-radius: 5px;
+          padding: 2%;
+          &:focus{
+            outline: none;
+          }
+          &::placeholder{
+            color: $c-lightGray;
+          }
+        }
+      }
+
+      //Button Submit
+      .btn_submit{
+        margin-top: 5%;
+        border: none;
+        background: $c-orange;
+        color: $c-white;
+        padding: 2% 10%;
+        border-radius: 5px;
+        transition: transform 0.2s ease-in;
+        &:hover{
+          transform: scale(1.01);
+        }
+      }
+    }
+  }
+}
+
+/*Responsives Views*/
+@media only screen and (min-width: 350px) and (max-width: 800px){
+  .hire_header{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .hire_title_container{
+      width: 100%;
+    }
+    .hire_search_bar{
+      width: 100%;
+      align-items: center;
+      .search_items{
+        flex-direction: column;
+        .search_bar{
+          width: 100%;
+          padding: 2% 2% 2% 15%;
+          margin-right: 0;
+        }
+        .label_bar{
+          display: none;
+        }
+
+        .select_input{
+          margin-left: 0;
+          margin-top: 2%;
+          align-self: flex-start;
+          padding: 3%;
+        }
+      }
+
+      .line_nav{
+        width: 100%;
+        margin-top: 5%;
+        &::after{
+          width: 90%;
+          right: 5%;
+        }
+      }
+    }
+  }
+
+  .contact_container{
+    flex-direction: column;
+    .image_container{
+      display: none;
+    }
+    .contact_information{
+      width: 100%;
+      align-items: center;
+      .form_contact_job .label_form{
+        width: 100%;
+        .input_form{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1090px){
+  .hire_header .hire_title_container{
+    width: 40%;
+  }
+
+  .hire_header .hire_search_bar{
+    width: 60%;
+    .search_items{
+      flex-direction: column;
+      align-items: flex-end;
+      .search_bar{
+        margin-right: 0;
+        padding: 2% 4% 2% 11%;
+      }
+      .label_bar{
+        display: none;
+      }
+      .select_input{
+        margin-top: 2%;
+      }
+    }
+  }
+
+  .contact_container .image_container{
+    width: 40%;
+  }
+
+  .contact_container .contact_information{
+    width: 50%;
+    .form_contact_job .label_form{
+      width: 100%;
+    }
+  }
+}
+

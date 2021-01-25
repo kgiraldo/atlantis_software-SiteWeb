@@ -1,1 +1,71 @@
-<p>recrutement works!</p>
+<div class="hire_container margin-container">
+  <!--Header-->
+  <div class="hire_header">
+    <!--Title-->
+    <div class="hire_title_container">
+      <h2 class="principal_title_sections">Nous <br> Recrutons</h2>
+      <p class="description_change">Nous recrutons les membres de notre équipe qui seront les acteurs de cette réussite. </p>
+    </div>
+    <!--Search Bar-->
+    <div class="hire_search_bar">
+      <div class="search_items">
+        <input type="search" id="sc_search_input" name="search_jobs" placeholder="Rechercher une offre" class="search_bar">
+        <label for="sc_filter_search" class="label_bar">Trier par date de publication</label>
+        <select name="time_filters" id="sc_filter_search" class="select_input">
+          <option value="">Toutes les offerts</option>
+          <option value="new">Plus récent</option>
+          <option value="old">Il y a plus de 30 jours</option>
+        </select>
+      </div>
+      
+      <hr class="line_nav">
+    </div>
+  </div>
+
+  <!--Job offerts-->
+  <app-job-offert [offerts]="getJobOffert()" class="d-flex flex-column mt-5"></app-job-offert>
+
+  <!--Contact RH-->
+  <div class="contact_container">
+    <div class="image_container">
+      <img src="../../assets/img/Recrutons_image.png" alt="Girl celebrating">
+      <div class="background_image"></div>
+    </div>
+
+    <div class="contact_information">
+      <h2 class="principal_title_sections">Envoyez Votre CV</h2>
+      <p class="description_change">Rejoignez-nous, exprimez vos talents avec nous, soyez avec nous !</p>
+      <form action="" class="form_contact_job">
+        <label class="label_form">
+          Nom:
+          <input type="text" placeholder="Dupont" class="input_form">
+        </label>
+        <label class="label_form">
+          Prénom:
+          <input type="text" placeholder="Pierre" class="input_form">
+        </label>
+        <label class="label_form">
+          Téléphone:
+          <input type="text" placeholder="0758693254" class="input_form">
+        </label>
+        <label class="label_form">
+          Email:
+          <input type="email" placeholder="exemple@email.com" class="input_form">
+        </label>
+        <label class="label_form">
+          Ajoutez votre CV:
+          <input type="file" class="input_file">
+        </label>
+        <label class="label_form">
+          Ajoutez votre lettre de motivation:
+          <input type="file" class="input_file">
+        </label>
+        <label class="label_form">
+          Racontez-nous pourquoi vous voulez nous rejoindre :
+          <textarea cols="30" rows="5" placeholder="écrire un message" class="input_message"></textarea>
+        </label>
+        <input type="submit" value="Envoyer Candidature" class="btn_submit">
+      </form>
+    </div>
+  </div>
+</div>

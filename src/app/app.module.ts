@@ -16,6 +16,7 @@ import { ModulesComponent } from './modules/modules.component';
 import { ExtensionsComponent } from './extensions/extensions.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DragScrollModule } from 'ngx-drag-scroll';
+import { JobOffertComponent } from './job-offert/job-offert.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DragScrollModule } from 'ngx-drag-scroll';
     PackagesComponent,
     ModulesComponent,
     ExtensionsComponent,
+    JobOffertComponent,
   ],
   imports: [
     BrowserModule,
