@@ -10,7 +10,7 @@ export class ContactComponent implements OnInit {
   //Map Variables
   lat=45.73093252052653;
   lng=4.929725704731475;
-  zoom=15;
+
 
   //Width 
   width:boolean;

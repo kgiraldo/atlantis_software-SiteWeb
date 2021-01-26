@@ -119,8 +119,14 @@
   <div class="map_container">
     <h2 class="principal_title_sections">Trouvez-nous</h2>
     <p class="description_change">Nous sommes à votre disposition pour améliorer votre activité négoce. </p>
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
+    <aol-map [width]="'100%'" [height]="'300px'">
+      <aol-interaction-default></aol-interaction-default>
+      <aol-view [zoom]="5">
+          <aol-coordinate [x]="4.929725704731475" [y]="45.73093252052653" [srid]="'EPSG:3857'"></aol-coordinate>
+      </aol-view>
+      <aol-layer-tile>
+          <aol-source-osm></aol-source-osm>
+      </aol-layer-tile>
+  </aol-map>
   </div>
 </div>

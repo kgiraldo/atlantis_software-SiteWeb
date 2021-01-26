@@ -27,11 +27,9 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@agm/core": "^3.0.0-beta.0",
     "@angular-devkit/build-angular": "~0.1100.6",
     "@angular/cli": "~11.0.6",
     "@angular/compiler-cli": "~11.0.6",
-    "@types/googlemaps": "^3.39.13",
     "@types/jasmine": "~3.6.0",
     "@types/jquery": "^3.5.5",
     "@types/node": "^12.11.1",
@@ -47,6 +45,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "ngx-drag-scroll": "^9.0.0-beta.4",
     "ngx-pagination": "^5.0.0",
+    "ngx-openlayers": "^0.8.22",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
