@@ -11,6 +11,7 @@ export class CommersialisationComponent implements OnInit, DoCheck {
 
   typeMarketing:string;
   typeMobile:string;
+  defaultTouch = { x: 0, y: 0, time: 0 };
 
   //Carousel
   @ViewChild('sc_carousel_benefits', {static:true, read: DragScrollComponent}) carousel: DragScrollComponent;
@@ -192,31 +193,53 @@ export class CommersialisationComponent implements OnInit, DoCheck {
   }
 
   changeSelectorPosition(){
-    const selectorType = document.getElementById('sc_selector_type') as HTMLElement; 
+    const selectorType = document.getElementById('sc_selector_type') as HTMLElement;
     if(this.typeMarketing.includes('saas') && this.typeMobile.includes('large')){
       selectorType.style.right= "37%";
     } else if(this.typeMarketing.includes('acquisition') && this.typeMobile.includes('large')){
       selectorType.style.right= "5%";
     } else if(this.typeMarketing.includes('saas') && this.typeMobile.includes('small')){
-      selectorType.style.right = "70%"; 
+      selectorType.style.right = "70%";
     }  else if(this.typeMarketing.includes('acquisition') && this.typeMobile.includes('small')){
-      selectorType.style.right = "30%"; 
+      selectorType.style.right = "30%";
     }else if(this.typeMarketing.includes('saas') && this.typeMobile.includes('medium')){
-      selectorType.style.right = "50%"; 
+      selectorType.style.right = "50%";
     } else if(this.typeMarketing.includes('acquisition') && this.typeMobile.includes('medium')){
-      selectorType.style.right = "10%"; 
+      selectorType.style.right = "10%";
     }
   }
 
 //Touch Events
-  @HostListener('document:touchmove', ['$event'])
-  moveSlider(event:any){
-    event.preventDefault();
+  @HostListener('touchstart', ['$event'])
+  @HostListener('touchend', ['$event'])
+  @HostListener('touchcancel', ['$event'])
+  handleTouch(event: any) {
+    let touch = event.touches[0] || event.changedTouches[0];
     const slider = event.target as HTMLElement;
     if(slider.classList.contains('container_info_benefit') || slider.classList.contains('benefit_item') || slider.classList.contains('benefit_information')){
-      this.carousel.moveRight();
-    }
-  }
-  
+      // check the events
+      if (event.type === 'touchstart') {
+        this.defaultTouch.x = touch.pageX;
+        this.defaultTouch.y = touch.pageY;
+        this.defaultTouch.time = event.timeStamp;
+      } else if (event.type === 'touchend') {
+        let deltaX = touch.pageX - this.defaultTouch.x;
+        let deltaY = touch.pageY - this.defaultTouch.y;
+        let deltaTime = event.timeStamp - this.defaultTouch.time;
 
+        // simulte a swipe -> less than 500 ms and more than 60 px
+        if (deltaTime < 500) {
+          // touch movement lasted less than 500 ms
+          if (Math.abs(deltaX) > 60) {
+            // delta x is at least 60 pixels
+            if (deltaX > 0) {
+              this.carousel.moveLeft();
+            } else {
+              this.carousel.moveRight();
+            }
+          }
+        }
+      }
+    } 
+  }
 }
