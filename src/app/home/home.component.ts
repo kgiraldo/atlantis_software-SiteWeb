@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   width:boolean;
 
 
-  constructor() {
+  constructor(private router:Router) {
     //Slider variables packs section
     this.threshold =100;
     this.index=0;
@@ -115,79 +116,6 @@ export class HomeComponent implements OnInit {
     };
   }
 
-  //Slider Packs
-  @HostListener('document:touchstart', ['$event']) 
-  startSlider(event:any){
-    this.slider = document.getElementById('sc_pack_container');
-    this.slidesLength = (this.slider as HTMLElement).childElementCount;
-    this.slideSize = ((this.slider as HTMLElement).children[0] as HTMLElement).offsetWidth;
-
-    event = event || window.event;
-    event.preventDefault();
-    this.posInitial = this.slider.offsetLeft;
-    
-    
-    if (event.type == 'touchstart') {
-      this.posX = event.touches[0].clientX;
-    } 
-  }
-
-  @HostListener('document:touchmove', ['$event']) 
-  moveSlider(event:any){
-    event = event || window.event;
-    
-    if (event.type == 'touchmove') {
-      this.posXMove = this.posX - event.touches[0].clientX;
-      this.posX = event.touches[0].clientX;
-    } else {
-      this.posXMove = this.posX - event.clientX;
-      this.posX = event.clientX;
-    }
-    this.slider.style.left = (this.slider.offsetLeft - this.posXMove) + "px";
-  }
-
-  @HostListener('document:touchend', ['$event']) 
-  endSlider(){
-    this.posFinal = this.slider.offsetLeft;
-    
-    if (this.posFinal - this.posInitial < - this.threshold) {
-      this.shiftSlide(1, 'drag');
-    } else if (this.posFinal - this.posInitial > this.threshold) {
-      this.shiftSlide(-1, 'drag');
-    } else {
-      this.slider.style.left = (this.posInitial) + "px";
-
-    }
-
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-
-  shiftSlide(dir:number, action:string) {
-    if (this.allowShift) {
-      if (!action) { this.posInitial = this.slider.offsetLeft; }
-      
-      if (dir == 1) {
-        if(this.index < this.slidesLength - 4){
-          this.slider.style.left = (this.posInitial - this.slideSize) + "px";
-          this.index++;  
-        }else{
-          this.slider.style.left = this.posInitial + "px";
-        }
-            
-      } else if (dir == -1) {
-        if(this.index > 0){
-          this.slider.style.left = (this.posInitial + this.slideSize) + "px";
-          this.index--;  
-        }else{
-          this.slider.style.left = this.posInitial + "px";
-        }   
-      }
-    };
-    
-    this.allowShift = false;
-  }
-
   //Pack Info
   getPacksInfo(){
     return {
@@ -233,6 +161,19 @@ export class HomeComponent implements OnInit {
       ]
     }
   }
+
+  clickToContact(){
+    this.router.navigate(['/contact']);
+  }
+
+  clickToPacks(){
+    this.router.navigate(['/atlantis/packages']);
+  }
+
+  clickToMarketing(){
+    this.router.navigate(['/commersialisation/mode-saas']);
+  }
+
 
   @HostListener('window:resize', ['$event']) 
   getSizeWindow(event:any){

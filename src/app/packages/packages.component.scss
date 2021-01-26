@@ -116,6 +116,9 @@
   &:hover{
     transform: scale(1.01);
   }
+  &:focus{
+    outline: none;
+  }
 }
 
 /////Responsive /////

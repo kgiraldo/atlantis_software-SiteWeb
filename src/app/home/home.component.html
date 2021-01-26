@@ -44,7 +44,7 @@
         <span class="mini-texts">{{getServicesInfo().spanSectionServices}}</span>
         <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getServicesInfo().titleSectionServices}}</h2>
         <p class="description" [ngStyle]="{'color' : 'white'}">{{getServicesInfo().descriptionServicesText}}</p>
-        <a href="" class="cta_services">Contacter notre expert</a>
+        <a class="cta_services" (click)="clickToContact()">Contacter notre expert</a>
       </div>
       <div class="background_services"></div>
     </div>
@@ -94,7 +94,7 @@
           <h3 class="pack_title">{{pack.name}}</h3>
           <p class="pack_description">{{pack.description}}</p>
         </div>
-        <a href="" class="pack_cta" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'cta_orange' : 'cta_blue'">{{pack.cta}}</a>
+        <a (click)="clickToPacks()" class="pack_cta" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'cta_orange' : 'cta_blue'">{{pack.cta}}</a>
       </div>
     </div>
   </section>
@@ -121,7 +121,7 @@
       <div class="marketing_types" *ngFor="let type of getMarketingInfo().types">
           <h3 class="type_card__title">Mode {{type.mode}}</h3>
           <p class="type_card__description">{{type.description}}</p>
-          <a href="" class="type_card__link">En savoir plus</a>
+          <a (click)="clickToMarketing()" class="type_card__link">En savoir plus</a>
       </div>
     </div>
   </div>

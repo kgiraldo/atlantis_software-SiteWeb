@@ -128,6 +128,7 @@
   .cta_services{
     width: fit-content;
     text-decoration: none;
+    cursor: pointer;
     color: $c-white;
     background: $c-orange;
     padding: 15px 45px;
@@ -282,6 +283,7 @@
       font-size: 15px;
       border-radius: 5px;
       text-align: center;
+      cursor: pointer;
       letter-spacing: 1px;
       padding: 19px;
       text-decoration: none;
@@ -401,6 +403,7 @@
   color:$c-lightGray;
   font-family: "Montserrat Light",sans-serif;
   font-size: 13px;
+  cursor: pointer;
   text-decoration: none;
   -webkit-transition: color  0.2s ease-in;
   -moz-transition: color  0.2s ease-in;

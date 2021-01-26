@@ -6,7 +6,7 @@
   align-items: center;
   padding: 20px 0;
   margin-top: 40px;
-  font-family: "Montserrat Medium";
+  font-family: "Montserrat Medium", sans-serif;
   font-size: 13px;
 }
 
@@ -41,6 +41,11 @@
   color: $c-blue;
   @include hover-underline('fade', 'bottom'); 
   cursor: pointer;
+}
+
+.active {
+  border-bottom: 2px solid white!important;
+  padding-bottom: 3px;
 }
 
 .item__typeCta{

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-packages',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PackagesComponent implements OnInit {
 
   
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +50,10 @@ export class PackagesComponent implements OnInit {
         aditional : "+ 5 modules de votre choix",
       }  
     ];
+  }
+
+  clickToContact(){
+    this.router.navigate(['/contact']);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog } from '@angular/material/dialog';
 import {ContactModalComponent} from './contact-modal/contact-modal.component';
+import { event } from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,12 @@ export class AppComponent {
   }
 
   ngDoCheck(){
+    if(window.innerWidth <=800){
+      this.showMenu=false;
+    }else{
+      this.showMenu =true;
+    }
+
     if(this.router.url === "/"){
       this.isHome = true;
     }else{
@@ -72,7 +79,7 @@ export class AppComponent {
   getMenuInfo(){
     return{
       menuItems: [
-        {name: "Atlantis Business", linked: "/atlantis"},
+        {name: "Atlantis Business", linked: "/atlantis/packages"},
         {name: "Commercialisation", linked: "/commersialisation/mode-saas"},
         {name: "Nous Recrutons", linked: "/recrutement"},
         {name: "Contact", linked: "/contact"},
@@ -107,7 +114,9 @@ export class AppComponent {
 
   onClickMenu(url:string){
     this.router.navigate([url]);
-    this.closeMenuMobile();
+    if(this.showMenu === false){
+      this.closeMenuMobile();
+    }
   }
 
   
