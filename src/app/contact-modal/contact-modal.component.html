@@ -1,0 +1,31 @@
+<div class="modal_contact">
+	<!--Image-->
+	<div class="modal_image">
+		<img src="../../assets/img/Devis_image.png" alt="Woman looking at front">
+	</div>
+	<!--Information-->
+	<div class="contact_info_modal">
+		<h2 class="principal_title_sections">Demander l'aide d'un expert</h2>
+		<p class="description_change">Contactez un de nos experts et demandez-lui quelle est la meilleure option pour votre activité.</p>
+		<div class="contact_info">
+			<div class="item">
+				<h3 class="type_info">Horaires:</h3>
+				<p class="description_change m-0">Du lundi au vendredi</p>
+				<span class="big_text">9h à 18h</span>
+			</div>
+			<div class="item">
+				<h3 class="type_info">Email:</h3>
+				<p class="description_change m-0">info@atlantis-software.net</p>
+			</div>
+		</div>
+	</div>
+
+	<!--Close Modal-->
+	<svg class="button_close" (click)="onNoClick()" *ngIf="!widthWindow">
+		<use xlink:href="../../assets/icons/close_gray.svg#close_gray"></use>
+	</svg>
+	<button (click)="onNoClick()" *ngIf="widthWindow" class="button_close_mobile">Fermer</button>
+	
+</div>
+
+

@@ -19,6 +19,9 @@ import { DragScrollModule } from 'ngx-drag-scroll';
 import { JobOffertComponent } from './job-offert/job-offert.component';
 import { AgmCoreModule } from '@agm/core';
 import { MentionLegaleComponent } from './mention-legale/mention-legale.component';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactModalComponent } from './contact-modal/contact-modal.component';
 
 
 @NgModule({
@@ -37,6 +40,7 @@ import { MentionLegaleComponent } from './mention-legale/mention-legale.componen
     ExtensionsComponent,
     JobOffertComponent,
     MentionLegaleComponent,
+    ContactModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,8 @@ import { MentionLegaleComponent } from './mention-legale/mention-legale.componen
     HammerModule,
     NgxPaginationModule,
     DragScrollModule,
+    MaterialModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDTnJ2wsNtaEz47_OPc9t8PjI70QUSc7p8'
     })

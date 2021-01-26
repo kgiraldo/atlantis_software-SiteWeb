@@ -1,5 +1,7 @@
 import { Component, HostListener} from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog } from '@angular/material/dialog';
+import {ContactModalComponent} from './contact-modal/contact-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent {
   isHome?:boolean;
 
 
-  constructor(private router:Router){
+  constructor(private router:Router, public dialog: MatDialog){
     //Init show Menu variable
     if(window.innerWidth <=800){
       this.showMenu=false;
@@ -38,6 +40,15 @@ export class AppComponent {
     }else{
       this.isHome =false;
     }
+  }
+
+  
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ContactModalComponent, {
+      width: 'fit-content',
+      data: {},
+      panelClass: 'custom-modalbox'
+    });
   }
 
   //Visualisation Menu Conditions
@@ -78,11 +89,7 @@ export class AppComponent {
 
   //Call to actions information
   getCtaInfo(){
-    return{
-      cta : [
-        {value: "L'aide d'un expert ?", linked:"#"}
-      ]
-    };
+    return {value: "L'aide d'un expert ?"}
   }
 
   @HostListener('window:resize', ['$event'])

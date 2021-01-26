@@ -1,0 +1,98 @@
+@import '../../styles.scss';
+
+::ng-deep {
+  .custom-modalbox {
+    mat-dialog-container {
+      padding: 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+
+.modal_contact{
+  display: flex;
+  align-items: flex-start;
+  .modal_image{
+    background: $grandient-blue;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    img{
+      max-width: fit-content;
+      padding: 5% 0 0 0;
+    }
+  }
+
+  .contact_info_modal{
+    align-self: center;
+    width: 60%;
+    padding: 0 4%;
+    display: flex;
+    flex-direction: column;
+    .contact_info{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 4%;
+      .item{
+        display: flex;
+        flex-direction: column;
+        .type_info{
+          font-family: "Montserrat Medium", sans-serif;
+          font-size: 20px;
+          color:$c-gray;
+          margin: 0;
+        }
+        .big_text{
+          font-family: "Montserrat Extrabold",sans-serif;
+          font-size: 40px;
+          color: $c-gray;
+          margin: 0;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .button_close{
+    cursor: pointer;
+    width: 5%;
+    padding: 2% 0 0 0;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .modal_contact{
+    flex-direction: column;
+    .modal_image{
+      width: 100%;
+      img{
+        max-width: 80%;
+      }
+    }
+    .contact_info_modal{
+      width: 100%;
+      margin-top: 10%;
+      padding: 0 8%;
+      .principal_title_sections{
+        text-align: center;
+      }
+      .contact_info .item{
+        margin-bottom: 5%;
+      }
+    }
+
+    .button_close_mobile{
+      align-self: flex-end;
+      margin: 5%;
+      border: none;
+      background: none;
+      color: $c-lightGray;
+      font-family: "Montserrat Ligth", sans-serif;
+      font-size: 15px;
+      outline: none;
+    }
+  }
+}

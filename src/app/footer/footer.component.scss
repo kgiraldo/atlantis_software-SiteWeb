@@ -90,6 +90,9 @@
     &:hover{
       transform: scale(1.02);
     }
+    img{
+      max-width: 50%;
+    }
   }
 }
 
@@ -124,6 +127,9 @@
   .subscribe_input__content{
     .subscribe_input__submit__footer{
       width: 30%;
+      img{
+        max-width: 25%;
+      }
     }
   }
 }
