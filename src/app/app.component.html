@@ -1,19 +1,19 @@
 <!--Navigation Bar-->
-<header class="header__container" [ngStyle]="{'background' : getBackgroundColorMenu()}">
+<header class="header__container" [ngStyle]="{'background': colorLogo === 'white_logo' ? '#133854' : 'white' }">
   <nav class="margin-container nav-menu">
     <div class="nav-menu__header">
-      <a routerLink="/" [ngStyle]="{'display' : getMenuStyleBlue()}"><img src="../assets/img/logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__desktop"></a>
-      <a routerLink="/" [ngStyle]="{'display' : getMenuStyleWhite()}"><img src="../assets/img/mobile_logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__mobile"></a>
+      <a routerLink="/" *ngIf="colorLogo ==='blue_logo'"><img src="../assets/img/logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__desktop"></a>
+      <a routerLink="/" *ngIf="colorLogo ==='white_logo'"><img src="../assets/img/mobile_logo.png" alt="Atlantis Software Logo" class="nav-menu__logo logo__mobile"></a>
     </div>
     <div class="nav-menu__icon_mobile" (click)="openMenuMobile()" >
-      <img src="../assets/icons/menu.svg" alt="Icon menu burger" [ngStyle]="{'display' : getMenuStyleWhite()}">
-      <img src="../assets/icons/menu_blue.svg" alt="Icon menu burger" [ngStyle]="{'display' : getMenuStyleBlue()}">
+      <img src="../assets/icons/menu.svg" alt="Icon menu burger" *ngIf="colorLogo ==='white_logo'">
+      <img src="../assets/icons/menu_blue.svg" alt="Icon menu burger" *ngIf="colorLogo ==='blue_logo'">
     </div>
     
-    <div class="nav-menu__content" id="sc_content_menu" *ngIf="showMenu" [ngClass]="{'slide_left': showMenu}">
-      <img src="../assets/icons/close.svg" alt="Icon menu burger" class="nav-menu__list_icon" (click)="closeMenuMobile()">
+    <div #sc_content_menu class="nav-menu__content" >
+      <img src="../assets/icons/close.svg" alt="Close icon" class="nav-menu__list_icon" (click)="closeMenuMobile()">
       <ul class="nav-menu__list">
-        <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of getMenuInfo().menuItems" [routerLink]="item.linked" class="nav-menu__list_item item__typeText">{{item.name}}</a></li>
+        <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of getMenuInfo().menuItems" (click)="onClickMenu(item.linked)" class="nav-menu__list_item item__typeText">{{item.name}}</a></li>
         <a (click)="openDialog()" class="item__typeCta">{{getCtaInfo().value}}</a>
       </ul>
     </div>
