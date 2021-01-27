@@ -22,7 +22,8 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
 import { AngularOpenlayersModule } from "ngx-openlayers";
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,8 @@ import { AngularOpenlayersModule } from "ngx-openlayers";
     DragScrollModule,
     MaterialModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AngularOpenlayersModule
   ],
   providers: [],

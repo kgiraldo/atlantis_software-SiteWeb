@@ -15,8 +15,6 @@ export class CommersialisationComponent implements OnInit, DoCheck {
 
   //Carousel
   @ViewChild('sc_carousel_benefits', {static:true, read: DragScrollComponent}) carousel: DragScrollComponent;
-  posInit:number;
-  slider:HTMLElement;
 
   constructor(private route: Router) {
     this.typeMarketing = "mode-saas";

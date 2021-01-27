@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { DragScrollComponent } from 'ngx-drag-scroll';
 
 
 @Component({
@@ -10,16 +11,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   //Slider Functions
-  posInitial:any;
-  posX:any;
-  posXMove:any;
-  posFinal:any;
-  slider: any;
-  threshold:number;
-  allowShift:boolean;
-  index:number;
-  slidesLength:any;
-  slideSize:any;
+  @ViewChild('sc_pack_container', {static:true, read: DragScrollComponent}) carousel_pack: DragScrollComponent;
+  defaultTouch = { x: 0, y: 0, time: 0 };
 
   //Size Window
   width:boolean;
@@ -27,10 +20,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router:Router) {
     //Slider variables packs section
-    this.threshold =100;
-    this.index=0;
-    this.allowShift =true;
-    this.width =false;
   }
 
   ngOnInit(): void {}
@@ -182,6 +171,39 @@ export class HomeComponent implements OnInit {
     }else{
       this.width =false;
     }
+  }
+
+  //Touch Events
+  @HostListener('touchstart', ['$event'])
+  @HostListener('touchend', ['$event'])
+  @HostListener('touchcancel', ['$event'])
+  handleTouch(event: any) {
+    let touch = event.touches[0] || event.changedTouches[0];
+    const slider = event.target as HTMLElement;
+    if(slider.classList.contains('container_info_benefit') || slider.classList.contains('benefit_item') || slider.classList.contains('benefit_information')){
+      // check the events
+      if (event.type === 'touchstart') {
+        this.defaultTouch.x = touch.pageX;
+        this.defaultTouch.y = touch.pageY;
+        this.defaultTouch.time = event.timeStamp;
+      } else if (event.type === 'touchend') {
+        let deltaX = touch.pageX - this.defaultTouch.x;
+        let deltaTime = event.timeStamp - this.defaultTouch.time;
+
+        // simulte a swipe -> less than 500 ms and more than 60 px
+        if (deltaTime < 500) {
+          // touch movement lasted less than 500 ms
+          if (Math.abs(deltaX) > 60) {
+            // delta x is at least 60 pixels
+            if (deltaX > 0) {
+              this.carousel_pack.moveLeft();
+            } else {
+              this.carousel_pack.moveRight();
+            }
+          }
+        }
+      }
+    } 
   }
 
 }
