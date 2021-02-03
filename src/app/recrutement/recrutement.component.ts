@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecrutementComponent implements OnInit {
 
+  jobOffert:string = '';
+  datePublication:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,8 +28,7 @@ export class RecrutementComponent implements OnInit {
         description: "Vous aurez en charge la mise en forme et l’interface graphique du logiciel : votre travail est la vitrine d’Atlantis Software chez nos clients.<br/> <br/> Vous assurerez le développement de nos nouveaux objets graphiques.Passionné(e) et créatif(ve), vous maîtrisez ANGULAR 2, CSS/LESS, la programmation OBJET.<br/> Une expérience UI est appréciée.",
         important: "Ce poste est ouvert aux jeunes diplômés(es) et débutant(e)s avec une expérience en entreprise.",
         date: "25.06.18"
-      },
-
+      }
     ];
   }
 

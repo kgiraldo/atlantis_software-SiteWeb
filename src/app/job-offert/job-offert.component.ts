@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-job-offert',
   templateUrl: './job-offert.component.html',
@@ -7,12 +8,34 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class JobOffertComponent implements OnInit {
 
+  //Offerts
   @Input() offerts : any;
+
+  //Pagination
   p:number =1;
 
-  constructor() { }
+  //Search
+  filtered:any[] =[];
+
+
+  //date = new Date();
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.filter();
   }
+
+  filter(term: any = "") {
+    console.log(term)
+    term = (term as any).trim();
+    if (term) {
+      this.filtered = this.offerts.filter((offert:any) => offert.charge.includes(term.toUpperCase()))
+    } else {
+      this.filtered = this.offerts;
+    }
+  }
+
+  filterData(date: any = ""){}
 
 }

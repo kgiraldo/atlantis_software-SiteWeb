@@ -1,5 +1,5 @@
 <div class="job_offerts_container">
-  <div class="offert" *ngFor="let offert of offerts | paginate: { itemsPerPage: 3, currentPage: p }">
+  <div class="offert" *ngFor="let offert of filtered | paginate: { itemsPerPage: 3, currentPage: p }">
     <h3 class="title_offert">{{offert.charge}}</h3>
     <div class="offert_description">
       <p class="general_description" [innerHTML]="offert.description"></p>

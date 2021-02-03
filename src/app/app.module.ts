@@ -22,8 +22,9 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactModalComponent } from './contact-modal/contact-modal.component';
 import { AngularOpenlayersModule } from "ngx-openlayers";
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -53,10 +54,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     AngularOpenlayersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 }

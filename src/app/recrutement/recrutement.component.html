@@ -8,22 +8,15 @@
     </div>
     <!--Search Bar-->
     <div class="hire_search_bar">
-      <div class="search_items">
-        <input type="search" id="sc_search_input" name="search_jobs" placeholder="Rechercher une offre" class="search_bar">
-        <label for="sc_filter_search" class="label_bar">Trier par date de publication</label>
-        <select name="time_filters" id="sc_filter_search" class="select_input">
-          <option value="">Toutes les offerts</option>
-          <option value="new">Plus récent</option>
-          <option value="old">Il y a plus de 30 jours</option>
-        </select>
-      </div>
-      
+      <form class="search_items">
+        <input type="search" id="sc_search_input" name="search_jobs" placeholder="Rechercher une offre" class="search_bar" [(ngModel)]="jobOffert" (ngModelChange)="offert.filter(jobOffert)">
+      </form>
       <hr class="line_nav">
     </div>
   </div>
 
   <!--Job offerts-->
-  <app-job-offert [offerts]="getJobOffert()" class="d-flex flex-column mt-5"></app-job-offert>
+  <app-job-offert #offert [offerts]="getJobOffert()" class="d-flex flex-column mt-5"></app-job-offert>
 
   <!--Contact RH-->
   <div class="contact_container">
