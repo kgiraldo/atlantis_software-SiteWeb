@@ -119,6 +119,7 @@ body{
   .subscribe_input__submit{
     background: $c-blue;
     width: 10%;
+    border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     display: flex;
@@ -187,7 +188,7 @@ body{
   }
 }
 
- 
+
 /*mixin Hover Animation*/
 @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: $c-orange) {
   @if $dir == null {
@@ -214,14 +215,14 @@ body{
       } @else {
         bottom: $weight;
       }
-    } 
+    }
   }
   &:hover::after {
     @if $type == fade {
       bottom: $weight * -2;
       opacity: 1;
       visibility: visible;
-    } 
+    }
   }
 }
 
@@ -313,12 +314,12 @@ body{
   animation: slide-left-out 0.3s ease-in ;
 }
 
-@keyframes slide-left { 
-  from { right: -100%; opacity: 0;} 
-  to { right: 0;  opacity: 1;}  
+@keyframes slide-left {
+  from { right: -100%; opacity: 0;}
+  to { right: 0;  opacity: 1;}
 }
 
-@keyframes slide-left-out { 
-  from { right: 0%; } 
-  to { right: -100%;}  
+@keyframes slide-left-out {
+  from { right: 0%; }
+  to { right: -100%;}
 }

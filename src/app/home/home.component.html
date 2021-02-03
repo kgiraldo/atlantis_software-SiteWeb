@@ -6,10 +6,10 @@
       <h1 class="principal_title">{{getHeaderInfo().title}}</h1>
       <h2 class="subtitle">{{getHeaderInfo().subtitle}}</h2>
       <p class="description">{{getHeaderInfo().description}}</p>
-      <div class="subscribe_input__content">
-        <input type="email" placeholder="exemple@mail.com" class="subscribe_input">
-        <a href="#" class="subscribe_input__submit"><img src="../../assets/icons/send.svg" alt="Send Icon"></a>
-      </div>
+      <form class="subscribe_input__content" method="POST" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+        <input type="email" placeholder="exemple@mail.com" class="subscribe_input" formControlName="email">
+        <button type="submit" class="subscribe_input__submit"><img src="../../assets/icons/send.svg" alt="Send Icon"></button>
+      </form>
     </div>
 
     <div class="content_baner__image">
@@ -36,7 +36,7 @@
         <app-characteristics *ngFor="let charac of getSocietyInfor().characteristics" [characteristics]="charac" class="card_container_description"></app-characteristics>
     </div>
   </section>
-  
+
   <!--Section 2-->
   <section class="other_services__content margin-container">
     <div class="other_services_title">
@@ -84,7 +84,7 @@
       <span class="mini-texts" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().span}}</span>
       <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().title}}</h2>
     </div>
-    
+
     <!--Packs-->
     <drag-scroll #sc_pack_container class="packs_container" id="sc_pack_container">
       <div class="pack" *ngFor="let pack of getPacksInfo().packs" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'pack_blue' : 'pack_orange'">

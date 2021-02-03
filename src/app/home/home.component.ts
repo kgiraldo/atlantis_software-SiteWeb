@@ -1,6 +1,9 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DragScrollComponent } from 'ngx-drag-scroll';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -17,12 +20,42 @@ export class HomeComponent implements OnInit {
   //Size Window
   width:boolean;
 
+  //Forms
+  formData: FormGroup;
 
-  constructor(private router:Router) {
-    //Slider variables packs section
+  constructor(private router:Router, private builder: FormBuilder, private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.formData = this.builder.group({
+      email: new FormControl('', [Validators.required, Validators.email]),
+    });
   }
 
-  ngOnInit(): void {}
+  //Form Send Information
+  onSubmit(data:any){
+    const sujetMessage = "DEMANDE D'INFORMATION ATLANTIS BUSINESS";
+    if(this.formData.valid){
+      this.http.post('https://formspree.io/f/xwkwzbpj', {
+        _subject: `${sujetMessage}`,
+        email: data.value.email
+      }).pipe(
+        map(
+          (response:any) => {
+            if (response) {
+              return response;
+            }
+          },
+          (error:any) => {
+            return error;
+          }
+        )
+      ).subscribe(
+        success => console.log('success'),
+        error => console.log('error')
+      );
+      this.formData.reset();
+    }
+  }
 
   //Header Information
   getHeaderInfo(){
@@ -40,24 +73,24 @@ export class HomeComponent implements OnInit {
       spanSectionEntreprise : "la societé",
       titleSectionEntrprise : "Atlantis Software",
       characteristics :[
-        { 
-          image: "../../assets/img/ProduitVedette.png", 
-          title: "Produit Vedette", 
+        {
+          image: "../../assets/img/ProduitVedette.png",
+          title: "Produit Vedette",
           description: "Atlantis Business un logiciel évolutif qui vous permet d'automatiser, améliorer et bénéficier votre activité de négoce. Full web - Licences ou SAAS."
         },
         {
-          image: "../../assets/img/Services.png", 
-          title: "Services", 
+          image: "../../assets/img/Services.png",
+          title: "Services",
           description: "Mettre à votre disposition des experts afin de maintenir une qualité de service optimum."
         },
         {
-          image: "../../assets/img/Specialite.png", 
-          title: "Specialité", 
+          image: "../../assets/img/Specialite.png",
+          title: "Specialité",
           description: "Le métier du négoce, avec une forte capacité à intégrer les besoins des clients. Spécialiste des TPE et PME."
         },
         {
-          image: "../../assets/img/Societe.png", 
-          title: "Societé", 
+          image: "../../assets/img/Societe.png",
+          title: "Societé",
           description: "Éditeur et Intégrateur d'une solution de gestion commerciale dédiée aux métiers du Négoce."
         }
       ]
@@ -112,20 +145,20 @@ export class HomeComponent implements OnInit {
       title: "Choisissez votre package Atlantis Business",
       packs : [
         {
-          icon: "../../assets/icons/pack_evol.svg" , 
-          name: "Le Pack Évolution", 
+          icon: "../../assets/icons/pack_evol.svg" ,
+          name: "Le Pack Évolution",
           description: "Optimise les processus avec votre problématique métier et votre exigence de qualité de service.",
           cta:"obtenir package"
         },
         {
-          icon: "../../assets/icons/pack_essentiel.svg" , 
-          name: "Le Pack Essentiel", 
+          icon: "../../assets/icons/pack_essentiel.svg" ,
+          name: "Le Pack Essentiel",
           description: "Idéal pour débuter l'organisation commerciale et la gestion des stocks.",
           cta:"obtenir package"
         },
         {
-          icon: "../../assets/icons/pack_pilot.svg" , 
-          name: "Le Pack Pilotage", 
+          icon: "../../assets/icons/pack_pilot.svg" ,
+          name: "Le Pack Pilotage",
           description: "Véritable outil qui accompagne votre croissance et permet une meilleure analyse de votre valeur ajoutée.",
           cta:"obtenir package"
         }
@@ -164,7 +197,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  @HostListener('window:resize', ['$event']) 
+  @HostListener('window:resize', ['$event'])
   getSizeWindow(event:any){
     if(event.target.innerWidth >=800 && event.target.innerWidth <=1120 ){
       this.width =true;
@@ -203,7 +236,7 @@ export class HomeComponent implements OnInit {
           }
         }
       }
-    } 
+    }
   }
 
 }

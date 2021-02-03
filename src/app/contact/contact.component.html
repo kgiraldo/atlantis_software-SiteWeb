@@ -109,7 +109,7 @@
       </label>
       <label class="label_form" for="message">
         Message
-        <textarea name="" id="" cols="30" rows="5" class="text_area" placeholder="écrire un message" name="message" formControlName="message"></textarea>
+        <textarea cols="30" rows="5" class="text_area" placeholder="écrire un message" name="message" formControlName="message"></textarea>
       </label>
       <span class="text_warning" [ngClass]="{'warning': textSubmit === 'Vous devez remplir bien le formulaire', 'succes':textSubmit === 'Votre message a été envoyé!'}">{{textSubmit}}</span>
       <button type="submit" class="btn_submit" [disabled]="!validForm" >Envoyer Message</button>
