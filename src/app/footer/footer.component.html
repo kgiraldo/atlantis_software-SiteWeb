@@ -11,7 +11,7 @@
           <p class="footer_text">{{campus.address}}</p>
         </div>
       </div>
-      
+
 
       <a (click)="clickMentionLegale()" class="footer_mentions">Mentions Légales</a>
     </div>
@@ -19,10 +19,10 @@
     <div class="footer_column">
       <h4 class="footer-title">Contactez un de nos experts</h4>
       <p class="footer_text">Laissez-nous votre email, nous vous contacterons bientôt</p>
-      <div class="subscribe_input__content">
-        <input type="email" placeholder="exemple@mail.com" class="subscribe_input">
-        <a href="#" class="subscribe_input__submit__footer"><img src="../../assets/icons/send.svg" alt="Send Icon"></a>
-      </div>
+      <form class="subscribe_input__content" method="POST" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+        <input type="email" placeholder="exemple@mail.com" class="subscribe_input" formControlName="email">
+        <button type="submit" class="subscribe_input__submit__footer"><img src="../../assets/icons/send.svg" alt="Send Icon"></button>
+      </form>
       <p class="rights">© 2020 Atlantis Software - Tous droits réservés</p>
     </div>
   </div>
