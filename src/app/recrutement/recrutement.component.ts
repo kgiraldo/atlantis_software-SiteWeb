@@ -9,10 +9,32 @@ export class RecrutementComponent implements OnInit {
 
   jobOffert:string = '';
   datePublication:string = '';
+  noResults:boolean =false;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck(){
+    this.getResultFilter(this.jobOffert);
+  }
+
+  getResultFilter(term: any = ""){
+    const offerts:any = this.getJobOffert();
+    let list:any[] =[];
+    if(term){
+      list = offerts.filter((o:any) => o.charge.includes(term.toUpperCase()));
+      if(list.length == 0){
+        this.noResults = true;
+      }
+    }
+
+    //Validation
+    if(!this.jobOffert){
+      this.noResults = false;
+    }
   }
 
   getJobOffert(){

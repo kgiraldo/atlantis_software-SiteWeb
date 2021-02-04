@@ -17,7 +17,6 @@ export class JobOffertComponent implements OnInit {
   //Search
   filtered:any[] =[];
 
-
   //date = new Date();
   constructor() {
   }
@@ -27,15 +26,16 @@ export class JobOffertComponent implements OnInit {
   }
 
   filter(term: any = "") {
-    console.log(term)
     term = (term as any).trim();
     if (term) {
       this.filtered = this.offerts.filter((offert:any) => offert.charge.includes(term.toUpperCase()))
     } else {
       this.filtered = this.offerts;
     }
-  }
 
-  filterData(date: any = ""){}
+    if(this.filtered.length == 0){
+      this.filtered = this.offerts;
+    }
+  }
 
 }

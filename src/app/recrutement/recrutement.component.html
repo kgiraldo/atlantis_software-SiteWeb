@@ -12,6 +12,9 @@
         <input type="search" id="sc_search_input" name="search_jobs" placeholder="Rechercher une offre" class="search_bar" [(ngModel)]="jobOffert" (ngModelChange)="offert.filter(jobOffert)">
       </form>
       <hr class="line_nav">
+      <div class="no_result_container" *ngIf="noResults">
+        <span class="alert_result">Il n'y a pas des résultats pour <b class="search_word">{{jobOffert}}</b></span>
+      </div>
     </div>
   </div>
 

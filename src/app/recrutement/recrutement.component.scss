@@ -66,6 +66,23 @@
         height: 2px;
       }
     }
+
+    .no_result_container{
+      display: flex;
+      margin-top: 3%;
+      font-family: "Montserrat Light", sans-serif;
+      font-size: 14px;
+      .alert_result{
+        color: $c-lightGray;
+        .search_word{
+          background: $c-orange;
+          color: $c-white;
+          font-family: "Montserrat EXtrabold", sans-serif;
+          padding: 5px 10px;
+          border-radius: 5px;
+        }
+      }
+    }
   }
 }
 
