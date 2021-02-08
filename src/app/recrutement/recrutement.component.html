@@ -9,7 +9,7 @@
     <!--Search Bar-->
     <div class="hire_search_bar">
       <form class="search_items">
-        <input type="search" id="sc_search_input" name="search_jobs" placeholder="Rechercher une offre" class="search_bar" [(ngModel)]="jobOffert" (ngModelChange)="offert.filter(jobOffert)">
+        <input type="search" name="search_jobs" placeholder="Rechercher une offre" class="search_bar" [(ngModel)]="jobOffert" (ngModelChange)="offert.filter(jobOffert)" [disabled]="noOferts" >
       </form>
       <hr class="line_nav">
       <div class="no_result_container" *ngIf="noResults">
@@ -18,11 +18,13 @@
     </div>
   </div>
 
+
   <!--Job offerts-->
-  <app-job-offert #offert [offerts]="getJobOffert()" class="d-flex flex-column mt-5"></app-job-offert>
+  <app-job-offert #offert [offerts]="getJobOffert()" class="d-flex flex-column mt-5" [element]="contact" [noOferts]="noOferts"></app-job-offert>
+
 
   <!--Contact RH-->
-  <div class="contact_container">
+  <div class="contact_container" #contact>
     <div class="image_container">
       <img src="../../assets/img/Recrutons_image.png" alt="Girl celebrating">
       <div class="background_image"></div>

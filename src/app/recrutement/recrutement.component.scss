@@ -48,6 +48,10 @@
           width: 0;
           height: 0;
         }
+        &:disabled{
+          cursor: not-allowed;
+          background-image: url("../../assets/icons/search_gray.svg");
+        }
       }
     }
 

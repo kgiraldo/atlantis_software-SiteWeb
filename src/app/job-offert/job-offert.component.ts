@@ -10,9 +10,12 @@ export class JobOffertComponent implements OnInit {
 
   //Offerts
   @Input() offerts : any;
+  @Input() element : any;
+  @Input() noOferts : any;
 
   //Pagination
   p:number =1;
+
 
   //Search
   filtered:any[] =[];
@@ -37,5 +40,11 @@ export class JobOffertComponent implements OnInit {
       this.filtered = this.offerts;
     }
   }
+
+
+  scrollToElement(element:any): void {
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
 
 }

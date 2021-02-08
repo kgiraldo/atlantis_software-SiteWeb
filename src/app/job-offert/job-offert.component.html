@@ -1,4 +1,4 @@
-<div class="job_offerts_container">
+<div class="job_offerts_container" *ngIf="!noOferts">
   <div class="offert" *ngFor="let offert of filtered | paginate: { itemsPerPage: 3, currentPage: p }">
     <h3 class="title_offert">{{offert.charge}}</h3>
     <div class="offert_description">
@@ -9,8 +9,14 @@
   </div>
 </div>
 
+<div *ngIf="noOferts" class="result_ofert">
+  <div class="icon_message"><img src="../../assets/img/message.png" alt="Message Icon"></div>
+  <h3 class="message_title">Nous n'avons pas d'offres d'emploi ouvertes</h3>
+  <p class="message_result">Pour l'instant, nous n'avons pas d'offres d'emploi ouvertes mais vous pouvez laisser votre CV ci-dessous <a (click)="scrollToElement(element)">dans notre formulaire</a> </p>
+</div>
+
 <!--Pagination-->
-<div class="pagination_container">
+<div class="pagination_container" *ngIf="!noOferts">
   <hr class="line_pagination">
   <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" [maxSize]="0"  class="pagination_modules"></pagination-controls>
 </div>
