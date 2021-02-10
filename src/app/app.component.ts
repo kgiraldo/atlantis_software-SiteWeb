@@ -2,7 +2,12 @@ import { Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog } from '@angular/material/dialog';
 import {ContactModalComponent} from './contact-modal/contact-modal.component';
-import { event } from 'jquery';
+
+declare type ItemMenu = {
+  name: string,
+  linked: string,
+  active: boolean
+}
 
 @Component({
   selector: 'app-root',
@@ -11,6 +16,13 @@ import { event } from 'jquery';
 })
 export class AppComponent {
   title = 'atlantis-web';
+
+  menuItems: ItemMenu[] = [
+    {name: "Atlantis Business", linked: "/atlantis/packages", active: false},
+    {name: "Commercialisation", linked: "/commersialisation/mode-saas", active: false},
+    {name: "Nous Recrutons", linked: "/recrutement", active: false},
+    {name: "Contact", linked: "/contact", active: false}
+  ];
 
   showMenu:boolean;
   isHome:boolean;
@@ -57,6 +69,16 @@ export class AppComponent {
       this.isHome =false;
     }
 
+    // Active class item_active
+    this.menuItems.forEach(menu => {
+      if (menu.linked === this.router.url) {
+        menu.active = true;
+      } else {
+        menu.active = false;
+      }
+    });
+
+
     //Color
     if(window.innerWidth <=800 && this.isHome  ){
       this.colorLogo = 'white_logo';
@@ -75,23 +97,12 @@ export class AppComponent {
     });
   }
 
-  //Get menu option Information
-  getMenuInfo(){
-    return{
-      menuItems: [
-        {name: "Atlantis Business", linked: "/atlantis/packages"},
-        {name: "Commercialisation", linked: "/commersialisation/mode-saas"},
-        {name: "Nous Recrutons", linked: "/recrutement"},
-        {name: "Contact", linked: "/contact"},
-      ]
-    };
-  }
-
   //Call to actions information
   getCtaInfo(){
     return {value: "L'aide d'un expert ?"}
   }
 
+  // Mobile version
   @HostListener('window:resize', ['$event'])
   hideMenuMobile(event:any){
     if(event.target.innerWidth <=800){

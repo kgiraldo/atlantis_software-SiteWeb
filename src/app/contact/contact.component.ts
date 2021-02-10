@@ -61,7 +61,8 @@ export class ContactComponent implements OnInit {
   onSubmit(formData:any) {
     const subjectPrefix = "CONTACT MESSAGE:"
     if(this.formData.valid){
-      this.http.post('https://formspree.io/f/mjvpldvy', {
+      //Replace URL to post
+      this.http.post('https://formspree.io/f/mpzongyj', {
        name: formData.value.name,
        lastname: formData.value.lastname,
        _subject: `${subjectPrefix}${formData.value.sujet_contact}`,
@@ -93,10 +94,8 @@ export class ContactComponent implements OnInit {
         this.textSubmit = "";
       }, 1000);
    } else{
-    this.textSubmit = "Vous devez remplir bien le formulaire";
-   }
-    
-    
+      this.textSubmit = "Vous devez remplir bien le formulaire";
+     }   
   }
 
 

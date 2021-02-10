@@ -33,36 +33,37 @@
     <div class="contact_information">
       <h2 class="principal_title_sections">Envoyez Votre CV</h2>
       <p class="description_change">Rejoignez-nous, exprimez vos talents avec nous, soyez avec nous !</p>
-      <form action="" class="form_contact_job">
-        <label class="label_form">
+      <form action="" class="form_contact_job" method="POST" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+        <label class="label_form" for="name">
           Nom:
-          <input type="text" placeholder="Dupont" class="input_form">
+          <input type="text" placeholder="Dupont" class="input_form" name="name" formControlName="name">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="lastname">
           Prénom:
-          <input type="text" placeholder="Pierre" class="input_form">
+          <input type="text" placeholder="Pierre" class="input_form" name="lastname" formControlName="lastname">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="number">
           Téléphone:
-          <input type="text" placeholder="0758693254" class="input_form">
+          <input type="text" placeholder="0758693254" class="input_form" name="number" formControlName="number">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="email">
           Email:
-          <input type="email" placeholder="exemple@email.com" class="input_form">
+          <input type="email" placeholder="exemple@email.com" class="input_form" name="email" formControlName="email">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="cv">
           Ajoutez votre CV:
-          <input type="file" class="input_file">
+          <input type="file" class="input_file" name="cv"  formControlName="cvValidator" accept=".png, .jpg, .jpeg, .pdf" (change)="onFileChange($event)">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="letter">
           Ajoutez votre lettre de motivation:
-          <input type="file" class="input_file">
+          <input type="file" class="input_file" name="letter"  formControlName="letterValidator" accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" (change)="onFileChangeLetter($event)">
         </label>
-        <label class="label_form">
+        <label class="label_form" for="message">
           Racontez-nous pourquoi vous voulez nous rejoindre :
-          <textarea cols="30" rows="5" placeholder="écrire un message" class="input_message"></textarea>
+          <textarea cols="30" rows="5" placeholder="écrire un message" class="input_message" name="message" formControlName="message"></textarea>
         </label>
-        <input type="submit" value="Envoyer Candidature" class="btn_submit">
+        <span class="text_warning" [ngClass]="{'warning': textSubmit === 'Vous devez remplir bien le formulaire', 'succes':textSubmit === 'Votre message a été envoyé!'}">{{textSubmit}}</span>
+        <input type="submit" value="Envoyer Candidature" class="btn_submit" [disabled]="!valid">
       </form>
     </div>
   </div>

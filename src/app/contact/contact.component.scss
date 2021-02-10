@@ -1,25 +1,25 @@
-@import '../../styles.scss';
+@import "../../styles.scss";
 
-.contact-container{
+.contact-container {
   margin-top: 4%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.contact_title{
+.contact_title {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.container_form_contact{
+.container_form_contact {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 5%;
-  .general_contact{
+  .general_contact {
     width: 30%;
     position: relative;
     background: $c-blue;
@@ -30,46 +30,45 @@
     padding: 5% 4%;
     color: $c-white;
     //Title
-    .general_title{
+    .general_title {
       font-family: "Montserrat Extrabold", sans-serif;
       font-size: 30px;
     }
     //Description
-    .general_description{
-      font-family: "Montserrat Light",sans-serif;
+    .general_description {
+      font-family: "Montserrat Light", sans-serif;
       font-size: 15px;
     }
     //Information
-    .info_container{
+    .info_container {
       display: flex;
       align-items: center;
       width: 100%;
-      font-family: "Montserrat Light",sans-serif;
+      font-family: "Montserrat Light", sans-serif;
       margin-top: 10%;
-      img{
+      img {
         max-width: 100%;
       }
-      .information{
+      .information {
         display: flex;
         width: 100%;
         flex-direction: column;
-        .text_container{
+        .text_container {
           margin-left: 5%;
         }
       }
     }
   }
 
-  
-  .contact_form{
+  .contact_form {
     width: 70%;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0 0 5%;;
+    padding: 0 0 0 5%;
     justify-content: space-between;
     align-items: center;
     //Label
-    .label_form{
+    .label_form {
       margin-right: 2%;
       display: flex;
       flex-direction: column;
@@ -77,107 +76,106 @@
       color: $c-blue;
       font-size: 15px;
       width: 48%;
-      &:first-of-type, &:last-of-type{
+      &:first-of-type,
+      &:last-of-type {
         width: 100%;
         margin-right: 0;
       }
-      .input_form{
+      .input_form {
         margin-top: 1%;
         border: none;
         background: $c-bone;
         color: $c-gray;
         border-radius: 5px;
         padding: 2% 3%;
-        font-family: "Montserrat Light",sans-serif;
-        &:focus{
+        font-family: "Montserrat Light", sans-serif;
+        &:focus {
           outline: none;
         }
-        &::placeholder{
+        &::placeholder {
           color: $c-lightGray;
         }
       }
-      .text_area{
+      .text_area {
         border: none;
         background: $c-bone;
         border-radius: 5px;
         margin-top: 1%;
         padding: 2%;
-        font-family: "Montserrat Light",sans-serif;
+        font-family: "Montserrat Light", sans-serif;
         color: $c-gray;
-        &::placeholder{
+        &::placeholder {
           color: $c-lightGray;
         }
-        &:focus{
+        &:focus {
           outline: none;
         }
       }
 
-      .input_radio_container{
+      .input_radio_container {
         display: flex;
         align-items: center;
         width: 100%;
-        .input_radio{
+        .input_radio {
           margin-right: 5%;
         }
-        label{
+        label {
           margin: 0;
-          font-family: "Montserrat Light",sans-serif;
+          font-family: "Montserrat Light", sans-serif;
           color: $c-gray;
         }
       }
     }
     //Button Submit
-   .btn_submit{
+    .btn_submit {
       margin-top: 2%;
       border: none;
-      font-family: "Montserrat Light",sans-serif;
+      font-family: "Montserrat Light", sans-serif;
       background: $c-orange;
       cursor: pointer;
       color: $c-white;
       padding: 2% 10%;
       border-radius: 5px;
       transition: transform 0.2s ease-in;
-      &:hover{
+      &:hover {
         transform: scale(1.01);
       }
-      &:disabled{
+      &:disabled {
         background: $c-bone;
         color: $c-lightGray;
+        cursor: default;
       }
     }
 
-    .text_warning{
+    .text_warning {
       font-size: 12px;
       margin-right: 5%;
       color: $c-white;
       padding: 1%;
       border-radius: 5px;
-      font-weight: "Montserrat Light",sans-serif;
+      font-weight: "Montserrat Light", sans-serif;
     }
 
-    .warning{
+    .warning {
       background: $c-orange;
     }
 
-    .succes{
+    .succes {
       background: $c-lightGray;
     }
-
-    
   }
-
 }
 
-.map_container{
+.map_container {
   margin-top: 10%;
   display: flex;
   flex-direction: column;
 }
 
 //Map
-aol-map{
+aol-map {
   position: relative;
-  aol-control aol-content .ol-control{
+  aol-control aol-content .ol-control {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -186,7 +184,7 @@ aol-map{
     display: flex;
     flex-direction: column;
     align-items: center;
-    .control_item{
+    .control_item {
       cursor: pointer;
       margin-bottom: 20%;
       background: $c-blue;
@@ -198,51 +196,55 @@ aol-map{
       border-radius: 5px;
       align-self: center;
       transition: all 0.2s ease-out;
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
-      img{
+      img {
         max-width: 50%;
       }
-      &:hover{
+      &:hover {
         background: $c-deepBlue;
         transform: scale(1.05);
       }
     }
-  }     
+  }
 }
 
-@media only screen and (min-width: 350px) and (max-width: 800px){
-  .container_form_contact{
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .container_form_contact {
     flex-direction: column;
     justify-content: center;
-    .general_contact{
+    .general_contact {
       width: 100%;
       padding: 7% 8%;
-      .info_container{
+      .info_container {
         margin-top: 4%;
       }
     }
-    .contact_form{
+    .contact_form {
       width: 100%;
       margin-top: 8%;
       padding: 0;
-      .label_form{
+      .label_form {
         width: 100%;
-        .input_form{
+        .input_form {
           padding: 4% 3%;
         }
       }
     }
   }
 
-  .map_container{
+  .map_container {
     margin-top: 20%;
   }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1090px){
-  .container_form_contact .contact_form .label_form .input_radio_container label{
+@media only screen and (min-width: 800px) and (max-width: 1090px) {
+  .container_form_contact
+    .contact_form
+    .label_form
+    .input_radio_container
+    label {
     font-size: 12px;
   }
 }

@@ -13,7 +13,7 @@
     <div #sc_content_menu class="nav-menu__content" >
       <img src="../assets/icons/close.svg" alt="Close icon" class="nav-menu__list_icon" (click)="closeMenuMobile()">
       <ul class="nav-menu__list">
-        <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of getMenuInfo().menuItems" (click)="onClickMenu(item.linked)" class="nav-menu__list_item item__typeText">{{item.name}}</a></li>
+        <li class="d-flex nav-menu__list_item_li"><a *ngFor="let item of menuItems" (click)="onClickMenu(item.linked)" class="nav-menu__list_item item__typeText" [ngClass]="{'item_active': item.active}">{{item.name}}</a></li>
         <a (click)="openDialog()" class="item__typeCta">{{getCtaInfo().value}}</a>
       </ul>
     </div>
