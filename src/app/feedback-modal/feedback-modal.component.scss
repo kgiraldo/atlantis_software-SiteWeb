@@ -1,0 +1,10 @@
+@import '../../styles.scss';
+
+::ng-deep {
+  .custom-modalbox {
+    mat-dialog-container {
+      padding: 0;
+      border-radius: 10px;
+    }
+  }
+}
