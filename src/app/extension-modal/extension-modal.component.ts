@@ -9,11 +9,18 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class ExtensionModalComponent implements OnInit {
 
   extension: any;
+  widthWindow:boolean;
+
   constructor(public dialogRef: MatDialogRef<ExtensionModalComponent>, @Inject(MAT_DIALOG_DATA) public data: {extension: any}) {
     this.extension = this.data.extension;
   }
 
   ngOnInit(): void {
+    if(window.innerWidth >=350 && innerWidth<=800){
+      this.widthWindow =true;
+    } else {
+      this.widthWindow =false;
+    }
   }
 
   getColorBack(){
@@ -26,6 +33,12 @@ export class ExtensionModalComponent implements OnInit {
     }
   }
 
-
-
+  @HostListener('window:resize', ['$event'])
+  getSizeWindow(event:any){
+    if(event.target.innerWidth >=350 && event.target.innerWidth <=800 ){
+      this.widthWindow =true;
+    }else{
+      this.widthWindow =false;
+    }
+  }
 }

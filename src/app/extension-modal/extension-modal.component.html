@@ -12,5 +12,6 @@
       <p class="content_extension">{{type.description}}</p>
     </div>
   </div>
-  <button mat-button mat-dialog-close class="button_modal"><img src="../../assets/icons/close_gray.svg" alt="Close icon"></button>
+  <button mat-button mat-dialog-close *ngIf="widthWindow" class="button_modal_text">Close</button>
+  <button mat-button mat-dialog-close class="button_modal" *ngIf="!widthWindow"><img src="../../assets/icons/close_gray.svg" alt="Close icon"></button>
 </div>
