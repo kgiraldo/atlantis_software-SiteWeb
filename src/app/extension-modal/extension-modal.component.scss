@@ -1,0 +1,80 @@
+@import '../../styles.scss';
+
+::ng-deep {
+  .custom-modalbox {
+    mat-dialog-container {
+      padding: 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+.extension_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title_section{
+    height: 500px;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 3% 3%;
+    .title_section_extension{
+      color: $c-white;
+      font-family: "Montserrat Extrabold",sans-serif;
+      font-size: 50px;
+    }
+  }
+
+  .info_extension_section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    .extension_type{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5%;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      .type_title{
+        display: flex;
+        align-items: center;
+        img{
+          margin-right: 2%;
+        }
+        .title{
+          margin: 0;
+          font-family: "Montserrat Extrabold",sans-serif;
+          font-size: 25px;
+          color: $c-blue;
+        }
+      }
+      .content_extension{
+        margin-top: 3%;
+        font-family: "Montserrat Light", sans-serif;
+        font-size: 16px;
+        color: $c-gray;
+      }
+    }
+  }
+
+  .button_modal{
+    align-self: flex-start;
+    margin-right: 2%;
+    margin-top: 2%;
+    background: none;
+    border: none;
+    &:focus{
+      outline: none;
+    }
+    img{
+      transition: transform 0.2s ease-in;
+      &:hover{
+        transform: scale(1.12);
+      }
+    }
+  }
+}

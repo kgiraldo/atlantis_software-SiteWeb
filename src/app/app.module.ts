@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PackagesComponent } from './packages/packages.component';
 import { ModulesComponent } from './modules/modules.component';
 import { ExtensionsComponent } from './extensions/extensions.component';
+import { ExtensionModalComponent } from './extension-modal/extension-modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { JobOffertComponent } from './job-offert/job-offert.component';
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     JobOffertComponent,
     MentionLegaleComponent,
     ContactModalComponent,
+    ExtensionModalComponent
   ],
   imports: [
     BrowserModule,

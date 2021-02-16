@@ -1,0 +1,16 @@
+<!--Information-->
+<div class="extension_container">
+  <div class="title_section" [ngStyle]="{'background': getColorBack()}">
+    <h3 class="title_section_extension"[ngStyle]="{'color' : extension.name=== 'B2B'  || extension.name==='Contact' ? '#133854' : '#fff' }">{{extension.name}}</h3>
+  </div>
+  <div class="info_extension_section">
+    <div class="extension_type" *ngFor="let type of extension.types">
+      <div class="type_title">
+        <img src="../../assets/icons/card-list.svg" alt="Icon label">
+        <h4 class="title">{{type.name}}</h4>
+      </div>
+      <p class="content_extension">{{type.description}}</p>
+    </div>
+  </div>
+  <button mat-button mat-dialog-close class="button_modal"><img src="../../assets/icons/close_gray.svg" alt="Close icon"></button>
+</div>

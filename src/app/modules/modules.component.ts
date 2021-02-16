@@ -10,7 +10,7 @@ export class ModulesComponent implements OnInit {
   p:number =1;
   imageRoute:string;
 
-  constructor() { 
+  constructor() {
     this.imageRoute = "../../assets/img/SVG/";
   }
 
@@ -22,7 +22,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion de ventes",
         image : this.imageRoute+"gestion_ventes.svg",
-        characteristics : 
+        characteristics :
         [
           "Saisie de prise de commande, d’offre ou de devis.",
           "Édition des documents commerciaux, de  préparation de commande et bon de livraison.",
@@ -35,7 +35,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion des achats",
         image : this.imageRoute+"gestion_achats.svg",
-        characteristics : 
+        characteristics :
         [
           "Génération de commande de réapprovisionnement.",
           "Saisie assistée de commande de contre marque.",
@@ -48,7 +48,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion des stocks",
         image : this.imageRoute+"gestion_stocks.svg",
-        characteristics : 
+        characteristics :
         [
           "Définition des lieux et emplacements de stockage.",
           "Gestion automatique du stock.",
@@ -61,7 +61,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion catalogue fournisseurs",
         image : this.imageRoute+"gestion_catalogues.svg",
-        characteristics : 
+        characteristics :
         [
           "Gestion automatique des ventes et achats.",
           "Intégration des catalogues fournisseurs sans rajout d’article dans la base.",
@@ -74,7 +74,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Fiche paramétrage",
         image : this.imageRoute+"parametrage.svg",
-        characteristics : 
+        characteristics :
         [
           "Intégration des processus métiers et des flux de gestion du Négoce.",
           "Couverture fonctionnelle Optimale."
@@ -84,7 +84,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Statistiques",
         image : this.imageRoute+"stadistiques.svg",
-        characteristics : 
+        characteristics :
         [
           "Éditions chiffre d’affaires global ou détaillé.",
           "Éditions palmarès article, commercial et fiche commerciale.",
@@ -96,7 +96,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Réservations de stock",
         image : this.imageRoute+"reservation_stock.svg",
-        characteristics : 
+        characteristics :
         [
           "Disponibilité par agence et par lieu de stockage.",
           "Autorise le masquage d’un lieu de stockage dédié (libre service).",
@@ -108,7 +108,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "SAV",
         image : this.imageRoute+"sav.svg",
-        characteristics : 
+        characteristics :
         [
           "Estimation du prix de revient de la réparation.",
           "Suivi des temps passés par collaborateurs et par clients.",
@@ -119,7 +119,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Traitement différés",
         image : this.imageRoute+"traitement_differe.svg",
-        characteristics : 
+        characteristics :
         [
           "Lancement en arrière plan à des heures prédéfinies des traitements longs sans intervention humaine.",
           "Génération des statistiques, factures, etc..."
@@ -129,7 +129,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion de la Relation Client",
         image : this.imageRoute+"relation_client.svg",
-        characteristics : 
+        characteristics :
         [
           "Gestion des informations clients (Email, adresses,...).",
           "Automatisation de l’activité commerciale (tâches, activités, commandes, documentations...).",
@@ -141,7 +141,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Inter Agences / Inter Sociétés",
         image : this.imageRoute+"inter_agences.svg",
-        characteristics : 
+        characteristics :
         [
           "Gestion centralisée des tarifs de ventes et d'achat avec transfert sur les différentes sociétés partageant les mêmes prix.",
           "Échange entre sociétés du groupe facilités en évitant la ressaisie commande.",
@@ -152,7 +152,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Technique industrie",
         image : this.imageRoute+"technique_industrie.svg",
-        characteristics : 
+        characteristics :
         [
           "Attachement des options avec affichage en saisie de commande.",
           "Gestion des différentes nomenclatures.",
@@ -165,7 +165,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Gestion des lots / nuances",
         image : this.imageRoute+"gestion_lots.svg",
-        characteristics : 
+        characteristics :
         [
           "Comptabilisation du stock par lot (nuance, bain, lot, numéros de série, bobine, taille...).",
           "Attribution du lot en saisie de commande ou à la préparation ou la réception (contre marque).",
@@ -176,7 +176,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Remises en Banque",
         image : this.imageRoute+"remises_banque.svg",
-        characteristics : 
+        characteristics :
         [
           "Gérez vos différentes banques.",
           "Choisissez les modes de règlements pour vos remises et éditez vos bordereaux.",
@@ -188,7 +188,7 @@ export class ModulesComponent implements OnInit {
       {
         name: "Enlèvements",
         image : this.imageRoute+"enlevements.svg",
-        characteristics : 
+        characteristics :
         [
           "Planifiez vos livraisons et contrôlez vos coûts de transports.",
           "Organisation des tournées et du chargement des camions.",
@@ -196,44 +196,21 @@ export class ModulesComponent implements OnInit {
           "Gestion des tarifs et édition des étiquettes transporteurs."
         ]
       },
-
-      {
-        name: "Gestion des Prêts",
-        image : this.imageRoute+"gestion_prets.svg",
-        characteristics : 
-        [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        ]
-      },
-
-      {
-        name: "Gestion des caisses",
-        image : this.imageRoute+"gestion_caisses.svg",
-        characteristics : 
-        [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        ]
-      },
-
       {
         name: "Appels d'Offres",
         image : this.imageRoute+"appels_offres.svg",
-        characteristics : 
+        characteristics :
         [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "Interrogez vos fournisseurs sur des délais et des prix pour une affaire.",
+          "Saisissez les réponses et trier les.",
+          "Transformer partiellement ou totalement les réponses en commandes."
         ]
       },
 
       {
         name: "Royalties",
         image : this.imageRoute+"royalties.svg",
-        characteristics : 
+        characteristics :
         [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -244,18 +221,18 @@ export class ModulesComponent implements OnInit {
       {
         name: "Scannette",
         image : this.imageRoute+"scannette.svg",
-        characteristics : 
+        characteristics :
         [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "Préparez vos livraisons, comptez votre inventaire en bipant les codes barres.",
+          "Retrouver l’emplacement d’un produit en le scannant ou en saisissant son code article.",
+          "Signalez qu’un produit est en rupture de stock au moment de votre passage devant le rayon."
         ]
       },
 
       {
         name: "Intranet Dynamique",
         image : this.imageRoute+"intranet.svg",
-        characteristics : 
+        characteristics :
         [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
