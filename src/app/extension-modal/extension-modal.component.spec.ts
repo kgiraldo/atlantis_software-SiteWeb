@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExtensionModalComponent } from './extension-modal.component';
 
-describe('ContactModalComponent', () => {
+describe('ExtensionModalComponent', () => {
   let component: ExtensionModalComponent;
   let fixture: ComponentFixture<ExtensionModalComponent>;
 
