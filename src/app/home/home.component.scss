@@ -246,7 +246,7 @@
 
 .packs_container{
   display: flex;
-  margin-top: 70px;
+  margin-top: 5%;
   width: 100%;
   margin-left: 140px;
   margin-right: 140px;
@@ -285,37 +285,40 @@
           font-size: 20px;
         }
       }
-
-      .pack_cta{
-        font-family:"Montserrat Light",sans-serif;
-        font-size: 15px;
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        letter-spacing: 1px;
-        padding: 19px;
-        text-decoration: none;
-        -webkit-transition: transform 0.2s ease-in;
-        -moz-transition: transform 0.2s ease-in;
-        -o-transition: transform 0.2s ease-in;
-        transition: transform 0.2s ease-in;
-        &:hover{
-          transform: scale(1.05);
-        }
-      }
-    } 
+    }
   }
 }
 
 
 .pack_blue{
   background: $c-deepBlue;
-  height: 600px;
+  height: fit-content;
 }
 
 .pack_orange{
   background: $c-orange;
-  height: 660px;
+  height: 500px;
+}
+
+.pack_cta{
+  font-family:"Montserrat Light",sans-serif;
+  font-size: 15px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 19px;
+  text-decoration: none;
+  -webkit-transition: transform 0.2s ease-in;
+  -moz-transition: transform 0.2s ease-in;
+  -o-transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  color: $c-white;
+  background: $c-orange;
+  margin-top: 3%;
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 .cta_orange{
@@ -383,7 +386,7 @@
   margin-top: 20px;
   border-radius: 10px;
   position: relative;
-  -webkit-box-shadow: 10px 10px 5px rgba(245,245,245, 0.8);; 
+  -webkit-box-shadow: 10px 10px 5px rgba(245,245,245, 0.8);;
   box-shadow: 10px 10px 5px rgba(245,245,245, 0.8);
   &::before{
     content: "";
@@ -541,7 +544,7 @@
       &:nth-child(1), &:nth-child(3),&:nth-child(5) {
         margin-right: 0;
       }
-     
+
     }
   }
 
@@ -589,7 +592,7 @@
     touch-action: pan-x;
     margin-left: 20px;
     &::ng-deep .drag-scroll-content .pack{
-      width: 80%;
+      width: 100%;
       padding: 7%;
       &:last-child{
         margin-right: 20px;
@@ -602,11 +605,15 @@
   }
 
   .pack_blue{
-    height: 450px;
+    height: 390px;
   }
-  
+
   .pack_orange{
-    height: 450px;
+    height: 390px;
+  }
+
+  .pack_cta{
+    align-self: center;
   }
 
   //Section 5
@@ -634,6 +641,8 @@
 
 //Media Query for section 5
 @media only screen and (min-width: 800px) and (max-width: 1120px){
+
+
   .marketing_title{
     text-align: center;
     margin-bottom: 30px;
@@ -642,7 +651,20 @@
   .marketing_image{
     img{
       max-width: 75%;
-  
+
+    }
+  }
+
+  .packs_container{
+    width: 100%;
+    &::ng-deep .drag-scroll-content .pack{
+      margin-right: 2%;
+      &:last-child{
+        margin-right: 0;
+      }
+      .pack_info .pack_title{
+        white-space: break-spaces;
+      }
     }
   }
 }

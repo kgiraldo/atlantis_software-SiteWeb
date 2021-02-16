@@ -85,6 +85,8 @@
       <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().title}}</h2>
     </div>
 
+    <a class="pack_cta" (click)="clickToPack()">Voir tous les packs</a>
+
     <!--Packs-->
     <drag-scroll #sc_pack_container class="packs_container" id="sc_pack_container">
       <div class="pack" *ngFor="let pack of getPacksInfo().packs" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'pack_blue' : 'pack_orange'">
@@ -95,7 +97,6 @@
           <h3 class="pack_title">{{pack.name}}</h3>
           <p class="pack_description">{{pack.description}}</p>
         </div>
-        <a (click)="clickToPacks()" class="pack_cta" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'cta_orange' : 'cta_blue'">{{pack.cta}}</a>
       </div>
     </drag-scroll>
   </section>

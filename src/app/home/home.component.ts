@@ -188,7 +188,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/contact']);
   }
 
-  clickToPacks(){
+  clickToPack(){
     this.router.navigate(['/atlantis/packages']);
   }
 
