@@ -207,6 +207,14 @@ export class CommersialisationComponent implements OnInit, DoCheck {
     }
   }
 
+  moveLeft(){
+    this.carousel.moveLeft();
+  }
+
+  moveRight(){
+    this.carousel.moveRight();
+  }
+
 //Touch Events
   @HostListener('touchstart', ['$event'])
   @HostListener('touchend', ['$event'])
@@ -238,6 +246,6 @@ export class CommersialisationComponent implements OnInit, DoCheck {
           }
         }
       }
-    } 
+    }
   }
 }

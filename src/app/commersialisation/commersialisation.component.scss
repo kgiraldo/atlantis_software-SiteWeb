@@ -192,6 +192,36 @@
   }
 }
 
+.controls_container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 3%;
+  .line_controls{
+    border: 0.5px solid $c-lightGray;
+    width: 21%;
+    text-align: right;
+    margin: 0;
+  }
+  .controls{
+    margin-top: 2%;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    img{
+      cursor: pointer;
+      margin-left: 3%;
+      transition: transform 0.2s ease-in;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:hover{
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 350px) and (max-width: 800px) {
   .marketing_header{
     flex-direction: column;
@@ -252,6 +282,21 @@
       .benefit_item{
         margin-top: 8%;
         padding: 0 5%;
+      }
+    }
+  }
+
+  .controls_container{
+    margin-top: 8%;
+    .line_controls{
+      width: 70%;
+    }
+    .controls{
+      margin-top: 5%;
+      img{
+        &:last-child{
+          margin-left: 7%;
+        }
       }
     }
   }
