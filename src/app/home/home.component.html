@@ -80,12 +80,17 @@
   <!--Section 4-->
   <div class="background_product"></div>
   <section class="content_product__packs margin-container">
-    <div class="packs_title">
-      <span class="mini-texts" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().span}}</span>
-      <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().title}}</h2>
+
+    <div class="title_container_pack">
+      <div class="packs_title">
+        <span class="mini-texts" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().span}}</span>
+        <h2 class="principal_title_sections" [ngStyle]="{'color' : 'white'}">{{getPacksInfo().title}}</h2>
+      </div>
+
+      <!--CTA-->
+      <a class="pack_cta" (click)="clickToPack()">Voir tous les packs</a>
     </div>
 
-    <a class="pack_cta" (click)="clickToPack()">Voir tous les packs</a>
 
     <!--Packs-->
     <drag-scroll #sc_pack_container class="packs_container" id="sc_pack_container" [ngStyle]="{'justify-content' : 'space-between'}">
