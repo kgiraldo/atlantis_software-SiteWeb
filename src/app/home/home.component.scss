@@ -252,6 +252,7 @@
   margin-right: 140px;
   &::ng-deep .drag-scroll-content{
     overflow: hidden;
+    justify-content: space-between;
     .pack{
       width: 30%;
       margin-right: 5%;
@@ -591,15 +592,17 @@
     margin-top: 50px;
     touch-action: pan-x;
     margin-left: 20px;
-    &::ng-deep .drag-scroll-content .pack{
-      width: 100%;
-      padding: 7%;
-      &:last-child{
-        margin-right: 20px;
-      }
-      .pack_info .pack_title{
-        font-size: 30px;
-        white-space: nowrap;
+    &::ng-deep .drag-scroll-content {
+      .pack{
+        width: fit-content;
+        padding: 7%;
+        &:last-child{
+          margin-right: 20px;
+        }
+        .pack_info .pack_title{
+          font-size: 30px;
+          white-space: nowrap;
+        }
       }
     }
   }
