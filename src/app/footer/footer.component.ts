@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl,Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -13,10 +13,12 @@ export class FooterComponent implements OnInit {
 
   //Form Variables
   formData: FormGroup;
+  @ViewChild('sc_feedback_text', {static:true}) feedbackText: ElementRef;
 
   constructor(private router:Router, private builder:FormBuilder, private http:HttpClient) { }
 
   ngOnInit(): void {
+    //console.log(this.feedbackText.nativeElement.sty)
     this.formData = this.builder.group({
       email: new FormControl('', [Validators.required, Validators.email])
     });
@@ -45,6 +47,10 @@ export class FooterComponent implements OnInit {
         error => console.log('error')
       );
       this.formData.reset();
+      this.feedbackText.nativeElement.style.visibility = "visible";
+      setTimeout(()=>{
+        this.feedbackText.nativeElement.style.visibility = "hidden";
+      }, 800);
     }
   }
 

@@ -97,6 +97,15 @@
   }
 }
 
+.feedback-text{
+  color: $c-orange;
+  visibility: hidden;
+  font-family: "Montserrat Extrabold",sans-serif;
+  font-size: 12px;
+  margin-top: 1%;
+  transition: visibility 0.2s ease-in;
+}
+
 .rights{
   color: $c-lightGray;
   font-family: "Montserrat Light",sans-serif;
