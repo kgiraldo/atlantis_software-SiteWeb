@@ -4,6 +4,8 @@ import { DragScrollComponent } from 'ngx-drag-scroll';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import {MatDialog } from '@angular/material/dialog';
+import {FeedbackModalComponent} from '../feedback-modal/feedback-modal.component';
 
 
 @Component({
@@ -23,7 +25,7 @@ export class HomeComponent implements OnInit {
   //Forms
   formData: FormGroup;
 
-  constructor(private router:Router, private builder: FormBuilder, private http: HttpClient) {}
+  constructor(private router:Router, private builder: FormBuilder, private http: HttpClient, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.formData = this.builder.group({
@@ -54,7 +56,15 @@ export class HomeComponent implements OnInit {
         error => console.log('error')
       );
       this.formData.reset();
+      this.openDialog();
     }
+  }
+
+  openDialog(){
+    const dialogRef = this.dialog.open(FeedbackModalComponent, {
+      width: 'fit-content',
+      panelClass: 'custom-modalbox'
+    });
   }
 
   //Header Information

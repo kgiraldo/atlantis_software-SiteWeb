@@ -13,6 +13,10 @@ export class FeedbackModalComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<FeedbackModalComponent>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(()=>{
+      this.dialogRef.close();
+    }, 900);
+  }
 
 }

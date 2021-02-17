@@ -8,3 +8,44 @@
     }
   }
 }
+
+.feedback_container{
+  padding: 11% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .button_modal{
+    background: none;
+    border: none;
+    align-self: flex-end;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .image_alert{
+    margin-top: 10%;
+    img{
+      width: 66px;
+    }
+  }
+
+  .title_feedback{
+    margin-top: 20%;
+    font-size: 50px;
+    font-family: "Montserrat Extrabold", sans-serif;
+    color: $c-blue;
+  }
+
+  .text_info{
+    font-family: "Montserrat Light", sans-serif;
+    color: $c-gray;
+    margin-bottom: 0;
+    text-align: center;
+    width: 80%;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
