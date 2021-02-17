@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   lng:number= 4.93;
   zoom:number= 15;
 
-  //Width 
+  //Width
   width:boolean;
 
   //Form Data
@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
   validForm:boolean;
   textSubmit:string;
 
-  constructor(private builder: FormBuilder, private http: HttpClient) { 
+  constructor(private builder: FormBuilder, private http: HttpClient) {
     this.textSubmit="";
     this.validForm=false;
     if(window.innerWidth >=350 && innerWidth<=800){
@@ -90,16 +90,16 @@ export class ContactComponent implements OnInit {
       );
       this.textSubmit = "Votre message a été envoyé!";
       this.formData.reset();
-      setTimeout(()=>{                           
+      setTimeout(()=>{
         this.textSubmit = "";
       }, 1000);
    } else{
-      this.textSubmit = "Vous devez remplir bien le formulaire";
-     }   
+      this.textSubmit = "Vous devez remplir bien le formulaire!";
+     }
   }
 
 
-  
+
 
   zoomIn(){
     this.zoom+=2;
@@ -109,7 +109,7 @@ export class ContactComponent implements OnInit {
     this.zoom-=2;
   }
 
-  @HostListener('window:resize', ['$event']) 
+  @HostListener('window:resize', ['$event'])
   getSizeWindow(event:any){
     if(event.target.innerWidth >=350 && event.target.innerWidth <=800 ){
       this.width =true;
