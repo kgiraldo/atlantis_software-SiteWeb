@@ -37,7 +37,7 @@ export class AppComponent {
     }else{
       this.showMenu =true;
     }
-    
+
     if(this.router.url === "/"){
       this.isHome = true;
     }else{
@@ -73,11 +73,14 @@ export class AppComponent {
     this.menuItems.forEach(menu => {
       if (menu.linked === this.router.url) {
         menu.active = true;
-      } else {
+      }else {
         menu.active = false;
       }
     });
 
+    if(this.router.url === '/atlantis/modules' || this.router.url === '/atlantis/extensions'){
+      this.menuItems[0].active = true;
+    }
 
     //Color
     if(window.innerWidth <=800 && this.isHome  ){
@@ -89,7 +92,7 @@ export class AppComponent {
     }
   }
 
-  
+
   openDialog(): void {
     const dialogRef = this.dialog.open(ContactModalComponent, {
       width: 'fit-content',
@@ -112,7 +115,7 @@ export class AppComponent {
     }
   }
 
-  openMenuMobile(){ 
+  openMenuMobile(){
     (this.menu.nativeElement as HTMLElement).style.right = "0";
     (this.menu.nativeElement as HTMLElement).style.opacity = "1";
 
@@ -130,5 +133,5 @@ export class AppComponent {
     }
   }
 
-  
+
 }
