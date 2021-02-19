@@ -15,7 +15,6 @@ export class ContactComponent implements OnInit {
   lat:number= 45.7308277;
   lng:number= 4.9293653;
   zoom:number= 15;
-  fill:string = '#133854';
 
   //Width
   width:boolean;
