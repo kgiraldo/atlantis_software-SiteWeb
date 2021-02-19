@@ -12,9 +12,10 @@ import { map } from 'rxjs/operators';
 export class ContactComponent implements OnInit {
 
   //Map Variables
-  lat:number= 45.73;
-  lng:number= 4.93;
+  lat:number= 45.7308277;
+  lng:number= 4.9293653;
   zoom:number= 15;
+  fill:string = '#133854';
 
   //Width
   width:boolean;

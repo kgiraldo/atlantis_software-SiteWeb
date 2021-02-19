@@ -125,20 +125,40 @@
       <aol-interaction-default></aol-interaction-default>
       <aol-control>
         <aol-content>
-            <div id="controlnameforcssstyling" class="ol-unselectable ol-control">
-                <a (click)="zoomIn()" class="control_item"><img src="../../assets/icons/plus.svg" alt="Plus Icon"></a>
-                <a (click)="zoomOut()" class="control_item"><img src="../../assets/icons/minus.svg" alt="Minus Icon"></a>
-            </div>
+          <div id="controlnameforcssstyling" class="ol-unselectable ol-control">
+            <a (click)="zoomIn()" class="control_item"><img src="../../assets/icons/plus.svg" alt="Plus Icon"></a>
+            <a (click)="zoomOut()" class="control_item"><img src="../../assets/icons/minus.svg" alt="Minus Icon"></a>
+          </div>
         </aol-content>
-    </aol-control>
+      </aol-control>
 
       <aol-view [zoom]="zoom">
-          <aol-coordinate [x]="lng" [y]="lat" [srid]="'EPSG:4326'"></aol-coordinate>
+        <aol-coordinate [x]="lng" [y]="lat" [srid]="'EPSG:4326'"></aol-coordinate>
       </aol-view>
 
       <aol-layer-tile>
-          <aol-source-osm></aol-source-osm>
+        <aol-source-osm></aol-source-osm>
       </aol-layer-tile>
+
+
+
+      <aol-layer-vector>
+        <aol-source-vector>
+          <aol-feature>
+            <aol-geometry-point>
+              <aol-coordinate [x]="lng" [y]="lat" [srid]="'EPSG:4326'"></aol-coordinate>
+            </aol-geometry-point>
+            <aol-style>
+              <aol-style-circle [radius]="10">
+                <aol-style-stroke [color]="fill" [width]="2"></aol-style-stroke>
+                <aol-style-fill  [color]="[19,56,84,0.5]" ></aol-style-fill>
+              </aol-style-circle>
+            </aol-style>
+          </aol-feature>
+        </aol-source-vector>
+      </aol-layer-vector>
+
+
   </aol-map>
   </div>
 </div>

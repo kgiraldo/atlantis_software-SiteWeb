@@ -175,6 +175,25 @@
 //Map
 aol-map {
   position: relative;
+  margin-top: 2%;
+  cursor: all-scroll;
+  &::ng-deep div{
+    border-radius: 10px;
+    .ol-viewport{
+      &::before{
+        content: '12 Rue Edison, 69500 Bron';
+        position: absolute;
+        margin-left: 1%;
+        margin-top: 1%;
+        background: $c-blue;
+        padding: 8px 33px;
+        border-radius: 5px;
+        font-size: 15px;
+        color: $c-white;
+        font-family: "Montserrat Light", sans-serif;
+      }
+    }
+  }
   aol-control aol-content .ol-control {
     position: absolute;
     bottom: 0;
