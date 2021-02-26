@@ -94,7 +94,7 @@
 
     <!--Packs-->
     <drag-scroll #sc_pack_container class="packs_container" id="sc_pack_container" [ngStyle]="{'justify-content' : 'space-between'}">
-      <div class="pack" *ngFor="let pack of getPacksInfo().packs" [ngClass]="(pack.name != 'Le Pack Essentiel') ? 'pack_blue' : 'pack_orange'">
+      <div class="pack" *ngFor="let pack of getPacksInfo().packs" [ngClass]="(pack.name != 'Le Pack Évolution') ? 'pack_blue' : 'pack_orange'">
         <div class="pack_info">
           <div class=pack_icon>
             <img [src]="pack.icon" alt="Icon">

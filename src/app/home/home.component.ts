@@ -155,20 +155,20 @@ export class HomeComponent implements OnInit {
       title: "Choisissez votre package Atlantis Business",
       packs : [
         {
-          icon: "../../assets/icons/pack_evol.svg" ,
-          name: "Le Pack Évolution",
-          description: "Optimise les processus avec votre problématique métier et votre exigence de qualité de service.",
-          cta:"obtenir package"
-        },
-        {
           icon: "../../assets/icons/pack_essentiel.svg" ,
           name: "Le Pack Essentiel",
           description: "Idéal pour débuter l'organisation commerciale et la gestion des stocks.",
           cta:"obtenir package"
         },
         {
+          icon: "../../assets/icons/pack_evol.svg" ,
+          name: "Le Pack Évolution",
+          description: "Optimise les processus avec votre problématique métier et votre exigence de qualité de service.",
+          cta:"obtenir package"
+        },
+        {
           icon: "../../assets/icons/pack_pilot.svg" ,
-          name: "Le Pack Pilotage",
+          name: "Le Pack Intégration",
           description: "Véritable outil qui accompagne votre croissance et permet une meilleure analyse de votre valeur ajoutée.",
           cta:"obtenir package"
         }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog } from '@angular/material/dialog';
+import {ModalPackagesComponent} from '../modal-packages/modal-packages.component';
 
 @Component({
   selector: 'app-packages',
@@ -8,28 +10,30 @@ import { Router } from '@angular/router';
 })
 export class PackagesComponent implements OnInit {
 
-  
-  constructor(private router:Router) { }
+
+  constructor(private router:Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
- 
+
   getPackInformation(){
     return [
+
       {
-        name : "Pack Pilotage",
-        description : "Véritable outil qui accompagne la croissance et permet une meilleure analyse de votre ajoutée.",
-        characteristic : 
+        name : "Pack  Évolution",
+        description : "Optimise les processus avec votre problématique métier et votre exigence de qualité de service.",
+        characteristic :
         [
           {title : "Pack Essentiel", explanation: "Tous les outils du package essentiel"}
         ],
-        aditional : "+ 10 modules de votre choix",
+        aditional : "+ 5 modules de votre choix",
       },
+
 
       {
         name : "Pack Essentiel",
         description : "Idéal pour débuter l'organisations commerciale et la gestion des stocks.",
-        characteristic : 
+        characteristic :
         [
           {title : "Gestion de ventes", explanation: "Plus d'efficacité dans l'enregistrement des commandes et des demandes clients."},
           {title : "Gestion des achats", explanation: "Aide à la décision à travers différentes méthodes de calcul des besoins."},
@@ -41,19 +45,26 @@ export class PackagesComponent implements OnInit {
       },
 
       {
-        name : "Pack  Évolution",
-        description : "Optimise les processus avec votre problématique métier et votre exigence de qualité de service.",
-        characteristic : 
+        name : "Pack Intégral",
+        description : "Véritable outil qui accompagne la croissance et permet une meilleure analyse de votre ajoutée.",
+        characteristic :
         [
           {title : "Pack Essentiel", explanation: "Tous les outils du package essentiel"}
         ],
-        aditional : "+ 5 modules de votre choix",
-      }  
+        aditional : "+ 10 modules de votre choix",
+      }
+
+
     ];
   }
 
-  clickToContact(){
-    this.router.navigate(['/contact']);
+  clickToContact(pack:string){
+    console.log(pack)
+    const dialogRef = this.dialog.open(ModalPackagesComponent, {
+      width: 'fit-content',
+      panelClass: 'custom-modalbox',
+      data: {pack: pack}
+    });
   }
 
 }

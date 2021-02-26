@@ -20,10 +20,9 @@
 
       <!--Button-->
       <div class="card_links_container">
-        <button (click)="clickToContact()" class="card_cta"[ngStyle]="{'background':(pack.name === 'Pack Essentiel') ? '#fe5002' : '#133854' }">obtenir package</button>
-        <span class="card_terms" [ngStyle]="{'color':(pack.name === 'Pack Essentiel') ? '#fff' : '#535353' }">Un expert vous contactera ou appelez le 04 37 40 04 30 </span>
+        <button (click)="clickToContact(pack.name)" class="card_cta"[ngStyle]="{'background':(pack.name === 'Pack Essentiel') ? '#fe5002' : '#133854' }">Contacter un expert commercial</button>
       </div>
-      
+
     </div>
   </div>
 </div>
