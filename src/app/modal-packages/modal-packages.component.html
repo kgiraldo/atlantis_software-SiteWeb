@@ -1,0 +1,39 @@
+<div class="contact_packs">
+	<!--Image-->
+	<div class="modal_image">
+		<img src="../../assets/img/ab_imageBanner.png" alt="Business man smiling">
+  </div>
+
+	<!--Information-->
+	<div class="contact_info_modal">
+
+    <!--Close Modal-->
+	  <button class="close_button"  (click)="closeModal()"><img src="../../assets/icons/close_gray.svg#close_gray" alt="Close Button"></button>
+
+    <div class="info_content">
+      <h2 class="principal_title_sections">{{pack}}</h2>
+      <p class="description_change">Un de nos experts vous contactera dans les plus brefs délais.</p>
+      <form class="contact_form" method="POST" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+        <label class="label_form" for="name">
+          Nom
+          <input class="input_type" type="text" placeholder="Pierre Dupont" id="name" formControlName="name">
+        </label>
+        <label for="function" class="label_form">
+          Fonctionne
+          <input type="text" class="input_type" placeholder="Manager" id="function" formControlName="function">
+        </label>
+        <label for="telephone" class="label_form">
+          Numéro de Téléphone
+          <input type="text" class="input_type" placeholder="(+33) 7 78 95 56 74" id="telephone" formControlName="number">
+        </label>
+        <label for="email" class="label_form">
+          Email
+          <input type="email" class="input_type" placeholder="exemple@mail.com" id="telephone" formControlName="email">
+        </label>
+        <button class="button_submit" type="submit">Contacter Expert pour un devis</button>
+        <span class="message_result">{{textSubmit}}</span>
+      </form>
+    </div>
+
+	</div>
+</div>

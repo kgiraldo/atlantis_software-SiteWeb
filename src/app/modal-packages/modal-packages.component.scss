@@ -1,0 +1,116 @@
+@import '../../styles.scss';
+
+::ng-deep {
+  .custom-modalbox {
+    mat-dialog-container {
+      padding: 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+.contact_packs{
+  display: flex;
+  .modal_image{
+    background: $grandient-blue;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    img{
+      width: fit-content;
+      height: auto;
+    }
+  }
+
+  .contact_info_modal{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    //Close Icon
+    .close_button{
+      align-self: flex-end;
+      margin: 5%;
+      border: none;
+      background: none;
+      &:focus{
+        outline: none;
+      }
+    }
+
+    //Info
+    .info_content{
+      display: flex;
+      flex-direction: column;
+      padding: 0 11%;
+
+      //Form
+      .contact_form{
+        display: flex;
+        flex-direction: column;
+        .label_form{
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 2%;
+          color: $c-blue;
+          font-size: 15px;
+          font-family: "Montserrat Medium", sans-serif;
+          .input_type{
+            margin-top: 1%;
+            border: none;
+            background: $c-bone;
+            color: $c-gray;
+            border-radius: 5px;
+            padding: 2% 3%;
+            font-family: "Montserrat Light", sans-serif;
+            &::placeholder {
+              color: $c-lightGray;
+            }
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+        .button_submit{
+          font-family: "Montserrat Light", sans-serif;
+          font-size: 15px;
+          align-self: flex-end;
+          margin-top: 4%;
+          background: $c-orange;
+          border: none;
+          border-radius: 5px;
+          color: $c-white;
+          padding: 15px;
+          transition: transform 0.2s ease-in;
+          &:hover{
+            transform: scale(1.01);
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+
+        .message_result{
+          align-self: flex-end;
+          font-size: 12px;
+          margin-top: 4px;
+          font-family: "Montserrat Light", sans-serif;
+          color: $c-blue;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 800px) {
+  .contact_packs{
+    .modal_image{
+      display: none;
+    }
+    .contact_info_modal{
+      width: 100%;
+      margin-bottom: 5%;
+    }
+  }
+}

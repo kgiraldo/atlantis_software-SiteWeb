@@ -12,6 +12,7 @@ import { CommersialisationComponent } from './commersialisation/commersialisatio
 import { RecrutementComponent } from './recrutement/recrutement.component';
 import { ContactComponent } from './contact/contact.component';
 import { PackagesComponent } from './packages/packages.component';
+import { ModalPackagesComponent } from './modal-packages/modal-packages.component';
 import { ModulesComponent } from './modules/modules.component';
 import { ExtensionsComponent } from './extensions/extensions.component';
 import { ExtensionModalComponent } from './extension-modal/extension-modal.component';
@@ -46,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     MentionLegaleComponent,
     ContactModalComponent,
     ExtensionModalComponent,
-    FeedbackModalComponent
+    FeedbackModalComponent,
+    ModalPackagesComponent
   ],
   imports: [
     BrowserModule,
