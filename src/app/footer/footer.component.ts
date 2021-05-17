@@ -26,7 +26,7 @@ export class FooterComponent implements OnInit {
 
   //Form send information
   onSubmit(data:any){
-    const sujetMessage = "DEMANDE D'INFORMATION ATLANTIS BUSINESS";
+    const sujetMessage = "DEMANDE D'INFORMATIONS SUR ATLANTIS BUSINESS";
     if(this.formData.valid){
       this.http.post('https://formspree.io/f/xwkwzbpj', {
         _subject: `${sujetMessage}`,
@@ -58,7 +58,7 @@ export class FooterComponent implements OnInit {
   getAddressInfo(){
     return{
       campus: [
-        { name : "Agence", address:"12 rue Edinson | 69500, Bron "},
+        { name : "Agence", address:"12 rue Edison | 69500, Bron "},
         { name: "Siège social", address: "10 Bd de la Foire | 1528, Luxembourg "}
       ]
     };
