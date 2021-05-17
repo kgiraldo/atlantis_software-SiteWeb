@@ -127,7 +127,7 @@ export class RecrutementComponent implements OnInit {
          this.textSubmit = "";
        }, 1000);
     } else{
-      this.textSubmit = "Vous devez remplir bien le formulaire";
+      this.textSubmit = "Vous devez remplir tous les champs du formulaire";
     }
   }
 

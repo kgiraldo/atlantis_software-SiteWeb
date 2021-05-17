@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   //Form Send Information
   onSubmit(data:any){
-    const sujetMessage = "DEMANDE D'INFORMATION ATLANTIS BUSINESS";
+    const sujetMessage = "DEMANDE D'INFORMATIONS SUR ATLANTIS BUSINESS";
     if(this.formData.valid){
       this.http.post('https://formspree.io/f/xwkwzbpj', {
         _subject: `${sujetMessage}`,
@@ -80,13 +80,13 @@ export class HomeComponent implements OnInit {
   //Society Information
   getSocietyInfor(){
     return{
-      spanSectionEntreprise : "la societé",
+      spanSectionEntreprise : "la société",
       titleSectionEntrprise : "Atlantis Software",
       characteristics :[
         {
           image: "../../assets/img/ProduitVedette.png",
           title: "Produit Vedette",
-          description: "Atlantis Business un logiciel évolutif qui vous permet d'automatiser, améliorer et bénéficier votre activité de négoce. Full web - Licences ou SAAS."
+          description: "Atlantis Business, un logiciel évolutif qui vous permet d'automatiser, améliorer et faire fructifier votre activité de négoce. Full web - Licences ou SAAS."
         },
         {
           image: "../../assets/img/Services.png",
@@ -95,12 +95,12 @@ export class HomeComponent implements OnInit {
         },
         {
           image: "../../assets/img/Specialite.png",
-          title: "Specialité",
+          title: "Spécialité",
           description: "Le métier du négoce, avec une forte capacité à intégrer les besoins des clients. Spécialiste des TPE et PME."
         },
         {
           image: "../../assets/img/Societe.png",
-          title: "Societé",
+          title: "Société",
           description: "Éditeur et Intégrateur d'une solution de gestion commerciale dédiée aux métiers du Négoce."
         }
       ]
@@ -111,10 +111,10 @@ export class HomeComponent implements OnInit {
   getServicesInfo(){
     return{
       spanSectionServices :"atlantis software c'est aussi...",
-      titleSectionServices : "Autres Produits",
-      descriptionServicesText : "Nous somme un seul fournisseur pour tous vos besoins.",
+      titleSectionServices : "d'Autres Produits",
+      descriptionServicesText : "Un seul fournisseur pour tous vos besoins.",
       otherServices :[
-        {name: "Réseaux et système"}, {name: "Hébergement"}, {name: "Sauvegarde distante"}, {name: "Matériel"}, {name: "Téléphonie"}, {name:"Securité"}
+        {name: "Réseaux et système"}, {name: "Hébergement"}, {name: "Sauvegarde distante"}, {name: "Matériel"}, {name: "Téléphonie"}, {name:"Sécurité"}
       ]
     };
   }
@@ -123,12 +123,12 @@ export class HomeComponent implements OnInit {
   getProductInfo(){
     return{
       spanSectionProduct :"notre produit",
-      titleSectionProduct :"Atlantis Business votremeilleur choix aux métiers négoce...",
+      titleSectionProduct :"Atlantis Business votre meilleur choix pour les métiers du négoce...",
       descriptionProductText :"Le logiciel s'adapte à votre négoce par son approche modulaire qui vous permet d'évoluer.",
       descriptionItems : [
         {
           title: "Automatisation",
-          description: "Atlantis Business traite et automatise votre activité en bénéficiant la vision globale de votre entreprise.",
+          description: "Atlantis Business traite et automatise votre activité en vous faisant bénéficier d'une vision globale de votre entreprise.",
           image : "../../assets/img/product_c1.png",
           alt_image: "Business People Talking"
         },
@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit {
         },
         {
           title: "Modules",
-          description: "Atlantis Business adopte l'option de choisir les modules plus adaptés à votre activité.",
+          description: "Atlantis Business vous laisse l'option de choisir les modules plus adaptés à votre activité.",
           image : "../../assets/img/product_c3.png",
           alt_image: "Business People In A Meeting"
         }
@@ -184,7 +184,7 @@ export class HomeComponent implements OnInit {
       types: [
         {
           mode:"SAAS",
-          description: "Ce service facturé sous forme d'abonnement inclut l'usage des licences, l'assistance des utilisateurs et l'évolution du logiciel."
+          description: "Ce service, facturé sous forme d'abonnement, inclut l'usage des licences, l'assistance des utilisateurs et l'évolution du logiciel."
         },
         {
           mode:"Acquisition",

@@ -20,15 +20,15 @@ export class ModulesComponent implements OnInit {
   getModules(){
     return[
       {
-        name: "Gestion de ventes",
+        name: "Gestion des ventes",
         image : this.imageRoute+"gestion_ventes.svg",
         characteristics :
         [
           "Saisie de prise de commande, d’offre ou de devis.",
-          "Édition des documents commerciaux, de  préparation de commande et bon de livraison.",
+          "Édition des documents commerciaux, de  préparation de commande et de bon de livraison.",
           "Génération des factures manuelles ou groupées, ou au comptoir.",
           "Génération des écritures comptables.",
-          "Édition de documents de suivis et de portefeuille de commande ou d’offre."
+          "Édition de documents de suivis de commandes et/ou d’offres."
         ]
       },
 
@@ -37,11 +37,14 @@ export class ModulesComponent implements OnInit {
         image : this.imageRoute+"gestion_achats.svg",
         characteristics :
         [
-          "Génération de commande de réapprovisionnement.",
+          "Génération de proposition de commande de réapprovisionnement.",
           "Saisie assistée de commande de contre marque.",
           "Édition des documents de réception.",
           "Contrôle des factures fournisseurs.",
-          "Génération des écritures comptables."
+          "Génération des écritures comptables.",
+          "Édition de documents de suivis de commandes et/ou de réceptions.",
+          "Prise en commpte des avoirs dans la saisie des factures fournisseurs"
+
         ]
       },
 
@@ -67,7 +70,7 @@ export class ModulesComponent implements OnInit {
           "Intégration des catalogues fournisseurs sans rajout d’article dans la base.",
           "Lien automatique lors de la saisie de l’offre ou commande vers le catalogue fournisseur.",
           "Suivi du lien catalogue jusqu'à la commande d’achat.",
-          "Mise à jour simplifiée des tarifs d’achat."
+          "Mise à jour simplifiée des tarifs d’achats."
         ]
       },
 
@@ -77,7 +80,8 @@ export class ModulesComponent implements OnInit {
         characteristics :
         [
           "Intégration des processus métiers et des flux de gestion du Négoce.",
-          "Couverture fonctionnelle Optimale."
+          "Saisie et stockage des informations par défaut modifiables à l'usage.",
+          "Définition de profils de poste et des fonctionnalités accessible pour une couverture fonctionnelle Optimale."
         ]
       },
 
@@ -86,10 +90,11 @@ export class ModulesComponent implements OnInit {
         image : this.imageRoute+"stadistiques.svg",
         characteristics :
         [
-          "Éditions chiffre d’affaires global ou détaillé.",
-          "Éditions palmarès article, commercial et fiche commerciale.",
-          "Éditions portefeuilles divers.",
-          "Éditions statistiques d’achats."
+          "Éditions du chiffre d’affaires global ou détaillé.",
+          "Éditions de palmarès article, commercial et fiche commerciale.",
+          "Éditions de portefeuilles divers.",
+          "Éditions de statistiques de ventes et d’achats.",
+          "Edition du taux de service"
         ]
       },
 
@@ -100,8 +105,8 @@ export class ModulesComponent implements OnInit {
         [
           "Disponibilité par agence et par lieu de stockage.",
           "Autorise le masquage d’un lieu de stockage dédié (libre service).",
-          "Réservation dans l'ordre de saisie.",
-          "Automatisation des échanges entre agences."
+          "Réservation dans l'ordre de saisie avec possibilité de forcer une vente.",
+          "Automatisation et suivi des échanges entre agences."
         ]
       },
 
@@ -112,7 +117,9 @@ export class ModulesComponent implements OnInit {
         [
           "Estimation du prix de revient de la réparation.",
           "Suivi des temps passés par collaborateurs et par clients.",
-          "Transformation en offre client."
+          "Transformation en offre client.",
+          "Prise en charge des retours clients et fournisseurs associés",
+          "Transformation des retours fournisseurs en avoir pour facturation"
         ]
       },
 
@@ -122,7 +129,8 @@ export class ModulesComponent implements OnInit {
         characteristics :
         [
           "Lancement en arrière plan à des heures prédéfinies des traitements longs sans intervention humaine.",
-          "Génération des statistiques, factures, etc..."
+          "Génération des statistiques, factures, etc...",
+          "Liens automatisés vers des applications externes et/ou vers votre extranet",
         ]
       },
 
@@ -133,8 +141,7 @@ export class ModulesComponent implements OnInit {
         [
           "Gestion des informations clients (Email, adresses,...).",
           "Automatisation de l’activité commerciale (tâches, activités, commandes, documentations...).",
-          "Campagne Emailing.",
-          "Gestion des points cadeaux (fidélisations)."
+          "Gestion de points cadeaux (fidélisation)."
         ]
       },
 
@@ -144,7 +151,7 @@ export class ModulesComponent implements OnInit {
         characteristics :
         [
           "Gestion centralisée des tarifs de ventes et d'achat avec transfert sur les différentes sociétés partageant les mêmes prix.",
-          "Échange entre sociétés du groupe facilités en évitant la ressaisie commande.",
+          "Échanges entre sociétés du groupe facilités en évitant les ressaisies.",
           "Notion de groupe avec possibilité de CA consolidé."
         ]
       },
@@ -156,7 +163,6 @@ export class ModulesComponent implements OnInit {
         [
           "Attachement des options avec affichage en saisie de commande.",
           "Gestion des différentes nomenclatures.",
-          "Saisie des temps passés avec suivi du prix de revient.",
           "Gestion des découpes et des montages.",
           "Édition des documents correspondants."
         ]
@@ -167,8 +173,8 @@ export class ModulesComponent implements OnInit {
         image : this.imageRoute+"gestion_lots.svg",
         characteristics :
         [
-          "Comptabilisation du stock par lot (nuance, bain, lot, numéros de série, bobine, taille...).",
-          "Attribution du lot en saisie de commande ou à la préparation ou la réception (contre marque).",
+          "Comptabilisation du stock par lot (nuance, bain, lot, numéro de série, bobine, taille...).",
+          "Attribution du lot en saisie de commande ou à la préparation ou à la réception (contre marque).",
           "Inventaire détaillé par lot."
         ]
       },
@@ -180,7 +186,7 @@ export class ModulesComponent implements OnInit {
         [
           "Gérez vos différentes banques.",
           "Choisissez les modes de règlements pour vos remises et éditez vos bordereaux.",
-          "Envoie des documents par EDI.",
+          "Envoi des documents par EDI.",
           "Génération des écritures en comptabilité."
         ]
       },
@@ -191,9 +197,11 @@ export class ModulesComponent implements OnInit {
         characteristics :
         [
           "Planifiez vos livraisons et contrôlez vos coûts de transports.",
+          "Gestion d'une flotte de camions et/ou de transporteurs",
           "Organisation des tournées et du chargement des camions.",
           "Regroupement et suivi des colis.",
-          "Gestion des tarifs et édition des étiquettes transporteurs."
+          "Gestion des tarifs et édition des étiquettes transporteurs.",
+          "Edition d'un document d'émargement client"
         ]
       },
       {
@@ -203,7 +211,7 @@ export class ModulesComponent implements OnInit {
         [
           "Interrogez vos fournisseurs sur des délais et des prix pour une affaire.",
           "Saisissez les réponses et trier les.",
-          "Transformer partiellement ou totalement les réponses en commandes."
+          "Transformer partiellement ou totalement les réponses en commandes d'achats."
         ]
       },
 
@@ -212,9 +220,10 @@ export class ModulesComponent implements OnInit {
         image : this.imageRoute+"royalties.svg",
         characteristics :
         [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "Gestion des brevets et droits d'auteurs.",
+          "Paramétrage des droits d'exploitation des oeuvres.",
+          "Gestion des auteurs et/ou des ayant droits (adresse, téléphone, etc.).",
+          "Génération des feuilles de droits d'auteurs (±feuilles de payes)."
         ]
       },
 
@@ -225,7 +234,8 @@ export class ModulesComponent implements OnInit {
         [
           "Préparez vos livraisons, comptez votre inventaire en bipant les codes barres.",
           "Retrouver l’emplacement d’un produit en le scannant ou en saisissant son code article.",
-          "Signalez qu’un produit est en rupture de stock au moment de votre passage devant le rayon."
+          "Signalez qu’un produit est en rupture de stock au moment de votre passage devant le rayon.",
+          "Evitez les erreurs de produit au comptoir en bipant les étiquettes"
         ]
       },
 
@@ -234,9 +244,9 @@ export class ModulesComponent implements OnInit {
         image : this.imageRoute+"intranet.svg",
         characteristics :
         [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          "Générez des pages Web en lieu et place de vos éditions et partagez les sur votre Intranet.",
+          "Complétez votre Intranet avec des données en temps réel.",
+          "Partager les même informations à tous vos collaborateurs."
         ]
       },
 
