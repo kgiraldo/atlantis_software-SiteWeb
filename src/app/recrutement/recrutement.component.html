@@ -32,7 +32,7 @@
 
     <div class="contact_information">
       <h2 class="principal_title_sections">Envoyez Votre CV</h2>
-      <p class="description_change">Rejoignez-nous, exprimez vos talents avec nous, soyez avec nous !</p>
+      <p class="description_change">Rejoignez-nous, exprimez vos talents avec nous, intégrez notre équipe !</p>
       <form action="" class="form_contact_job" method="POST" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
         <label class="label_form" for="name">
           Nom:
@@ -59,10 +59,10 @@
           <input type="file" class="input_file" name="letter"  formControlName="letterValidator" accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" (change)="onFileChangeLetter($event)">
         </label>
         <label class="label_form" for="message">
-          Racontez-nous pourquoi vous voulez nous rejoindre :
+          Racontez-nous pourquoi vous voulez nous rejoindre ? :
           <textarea cols="30" rows="5" placeholder="écrire un message" class="input_message" name="message" formControlName="message"></textarea>
         </label>
-        <span class="text_warning" [ngClass]="{'warning': textSubmit === 'Vous devez remplir bien le formulaire', 'succes':textSubmit === 'Votre message a été envoyé!'}">{{textSubmit}}</span>
+        <span class="text_warning" [ngClass]="{'warning': textSubmit === 'Vous devez remplir la totalité des zones du formulaire', 'succes':textSubmit === 'Votre message a été envoyé!'}">{{textSubmit}}</span>
         <input type="submit" value="Envoyer Candidature" class="btn_submit" [disabled]="!valid">
       </form>
     </div>
