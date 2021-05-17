@@ -37,7 +37,7 @@ export class PackagesComponent implements OnInit {
         [
           {title : "Gestion de ventes", explanation: "Plus d'efficacité dans l'enregistrement des commandes et des demandes clients."},
           {title : "Gestion des achats", explanation: "Aide à la décision à travers différentes méthodes de calcul des besoins."},
-          {title : "Gestion des stocks", explanation: "Gérez votre plateforme de stockage, optimisez vos échanges entre agences."},
+          {title : "Gestion des stocks", explanation: "Gérez votre plateforme de stockage, comptez, valorisez rapidement votre stock."},
           {title : "Fiche de paramétrage", explanation: "Personnalisez votre environnement de travail grâce à un paramétrage accessible et puissant."},
           {title : "Statistiques", explanation: "Ayez une vision globale des capacités de votre société avec des analyses complètes et élaborées, utilisez des filtres pour les affiner."}
         ],
@@ -46,7 +46,7 @@ export class PackagesComponent implements OnInit {
 
       {
         name : "Pack Intégral",
-        description : "Véritable outil qui accompagne la croissance et permet une meilleure analyse de votre ajoutée.",
+        description : "Véritable outil qui accompagne la croissance et permet une meilleure analyse de votre valeur ajoutée.",
         characteristic :
         [
           {title : "Pack Essentiel", explanation: "Tous les outils du package essentiel"}
