@@ -55,7 +55,7 @@ export class ExtensionsComponent implements OnInit {
         types: [
           {
             name: "Touch",
-            description: "Donnez les moyens à vos représentants externes de préparer leurs visites. Visibilités des informations clients, de son encours, des incidents le concernant, de son chiffre d’affaire détaillé ou non."
+            description: "Donnez les moyens à vos représentants externes de préparer leurs visites. Visibilité des informations du client, de son encours, des incidents le concernant, de son chiffre d’affaire détaillé ou non."
           }
         ],
         image: {
